@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snow Travels – Northern Lights Tours Tromsø</title>
+  <meta name="description" content="Chase the northern lights with Tromsø's #1 rated tour company on GetYourGuide. 98% success rate. VIP & group tours. Book now." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">❄ snow-travels.com</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#tours" class="nav-link" data-en="Tours" data-zh="旅游">Tours</a>
+      <a href="#guides" class="nav-link" data-en="Guides" data-zh="导游">Guides</a>
+      <a href="#reviews" class="nav-link" data-en="Reviews" data-zh="评价">Reviews</a>
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">中文</button>
+      <a href="#booking" class="btn-nav" data-en="Book now" data-zh="立即预订">Book now</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" id="hamburger">☰</button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tours" onclick="closeMobile()" data-en="Tours" data-zh="旅游">Tours</a>
+    <a href="#guides" onclick="closeMobile()" data-en="Guides" data-zh="导游">Guides</a>
+    <a href="#reviews" onclick="closeMobile()" data-en="Reviews" data-zh="评价">Reviews</a>
+    <a href="#rednote" onclick="closeMobile()" data-en="RedNote 🇨🇳" data-zh="小红书 🇨🇳">RedNote 🇨🇳</a>
+    <a href="#booking" onclick="closeMobile()" class="mobile-book-btn" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="aurora-bg">
+      <div class="stars"></div>
+      <div class="aurora a1"></div>
+      <div class="aurora a2"></div>
+      <div class="aurora a3"></div>
+      <div class="mountain"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag" data-en="TROMSØ, NORWAY · #1 ON GETYOURGUIDE" data-zh="特罗姆瑟，挪威 · GetYourGuide 第一名">TROMSØ, NORWAY · #1 ON GETYOURGUIDE</div>
+      <h1 data-en="Chase the northern lights<br>with Tromsø's best guides" data-zh="与特罗姆瑟最好的导游<br>一起追逐北极光">Chase the northern lights<br>with Tromsø's best guides</h1>
+      <p class="hero-sub" data-en="Small groups · Expert guides · 98% success rate · Unforgettable memories" data-zh="小团体 · 专业导游 · 98%成功率 · 难忘的回忆">Small groups · Expert guides · 98% success rate · Unforgettable memories</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary" data-en="Book VIP — 2,400 kr →" data-zh="预订VIP游 — 2,400克朗 →">Book VIP — 2,400 kr →</a>
+        <a href="#tours" class="btn-outline" data-en="See all tours" data-zh="查看所有旅游">See all tours</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num">98%</span>
+          <span class="hstat-label" data-en="Aurora success rate" data-zh="北极光成功率">Aurora success rate</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">1,216</span>
+          <span class="hstat-label" data-en="Verified 5-star reviews" data-zh="认证五星评价">Verified 5-star reviews</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">#1</span>
+          <span class="hstat-label" data-en="In Tromsø on GYG" data-zh="特罗姆瑟排名第一">In Tromsø on GYG</span>
+        </div>
+      </div>
+    </div>
+    <a href="#tours" class="scroll-hint">↓</a>
+  </section>
+
+  <!-- REDNOTE BANNER -->
+  <div class="rednote-banner" id="rednote">
+    <div class="rn-inner">
+      <div class="rn-left">
+        <span class="rn-flag">🇨🇳</span>
+        <div>
+          <div class="rn-title" data-en="Most trusted RedNote partner in Tromsø · 官方认证" data-zh="特罗姆瑟小红书最受信赖合作伙伴 · 官方认证">Most trusted RedNote partner in Tromsø · 官方认证</div>
+          <div class="rn-sub" data-en="Use promo code for 10% off · Share with friends and spread the word!" data-zh="使用优惠码享受九折优惠 · 分享给朋友，让更多人知道！">Use promo code for 10% off · Share with friends and spread the word!</div>
+        </div>
+      </div>
+      <div class="rn-code-box">
+        <div class="rn-code-label" data-en="Promo code" data-zh="优惠码">Promo code</div>
+        <div class="rn-code">REDNOTE10</div>
+        <div class="rn-discount">10% off · 九折</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOURS -->
+  <section class="section bg-light" id="tours">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-en="Choose your experience" data-zh="选择您的体验">Choose your experience</h2>
+        <p data-en="Two ways to chase the lights — both unforgettable" data-zh="两种追光方式 — 都令人难忘">Two ways to chase the lights — both unforgettable</p>
+      </div>
+      <div class="tours-grid">
+        <div class="tour-card featured">
+          <div class="tour-img-wrap">
+            <img src="images/vip-tour.jpg" alt="VIP Northern Lights Tour" class="tour-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="tour-img-fallback vip-fallback">🌌</div>
+            <div class="tour-badges">
+              <span class="badge-vip">VIP</span>
+              <span class="badge-hot">🔥 Bestseller</span>
+            </div>
+          </div>
+          <div class="tour-body">
+            <h3 data-en="Northern Lights VIP Tour" data-zh="北极光VIP游">Northern Lights VIP Tour</h3>
+            <p class="tour-desc" data-en="The ultimate aurora experience. Max 15 guests in a luxury minibus. We chase the lights across mountains, fjords — and into Finland if that's what it takes." data-zh="终极北极光体验。最多15位客人乘坐豪华迷你巴士。我们将穿越山脉、峡湾，必要时甚至进入芬兰追逐极光。">The ultimate aurora experience. Max 15 guests in a luxury minibus. We chase the lights across mountains, fjords — and into Finland if that's what it takes.</p>
+            <ul class="tour-includes">
+              <li data-en="✓ Intimate group of max 15 guests" data-zh="✓ 最多15位客人的亲密小团体">✓ Intimate group of max 15 guests</li>
+              <li data-en="✓ Full thermal suit & Arctic boots" data-zh="✓ 全套保暖服和北极靴">✓ Full thermal suit & Arctic boots</li>
+              <li data-en="✓ Hot meal & drinks by bonfire" data-zh="✓ 篝火旁的热餐和饮料">✓ Hot meal & drinks by bonfire</li>
+              <li data-en="✓ Free professional photos" data-zh="✓ 免费专业照片">✓ Free professional photos</li>
+              <li data-en="✓ 4–6 hour aurora hunt" data-zh="✓ 4–6小时北极光追逐">✓ 4–6 hour aurora hunt</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <span class="price-amount">2,400 kr</span>
+                <span class="price-per" data-en="per person" data-zh="每人">per person</span>
+              </div>
+              <a href="#booking" class="btn-book" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="images/bus-tour.jpg" alt="Group Northern Lights Bus Tour" class="tour-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="tour-img-fallback bus-fallback">🚌</div>
+            <div class="tour-badges">
+              <span class="badge-group">GROUP</span>
+            </div>
+          </div>
+          <div class="tour-body">
+            <h3 data-en="Northern Lights Bus Tour" data-zh="北极光巴士游">Northern Lights Bus Tour</h3>
+            <p class="tour-desc" data-en="A great-value group adventure. Join up to 50 fellow aurora hunters on a comfortable coach. Same expert guides, same passion, same mission — find the lights." data-zh="超值团体冒险。与多达50位北极光追逐者一起乘坐舒适的大巴。同样的专业导游，同样的热情，同样的使命 — 找到极光。">A great-value group adventure. Join up to 50 fellow aurora hunters on a comfortable coach. Same expert guides, same passion, same mission — find the lights.</p>
+            <ul class="tour-includes">
+              <li data-en="✓ Up to 50 guests — meet fellow travellers" data-zh="✓ 最多50位客人 — 结识旅伴">✓ Up to 50 guests — meet fellow travellers</li>
+              <li data-en="✓ Full thermal suit & Arctic boots" data-zh="✓ 全套保暖服和北极靴">✓ Full thermal suit & Arctic boots</li>
+              <li data-en="✓ Hot drinks & Norwegian snacks" data-zh="✓ 热饮和挪威小吃">✓ Hot drinks & Norwegian snacks</li>
+              <li data-en="✓ Free professional photos" data-zh="✓ 免费专业照片">✓ Free professional photos</li>
+              <li data-en="✓ 4–6 hour aurora hunt" data-zh="✓ 4–6小时北极光追逐">✓ 4–6 hour aurora hunt</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <span class="price-amount">1,200 kr</span>
+                <span class="price-per" data-en="per person" data-zh="每人">per person</span>
+              </div>
+              <a href="#booking" class="btn-book btn-book-alt" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usps">
+        <div class="usp"><div class="usp-icon">🎯</div><div class="usp-title" data-en="98% success rate" data-zh="98%成功率">98% success rate</div><div class="usp-desc" data-en="We chase clear skies — even across the Finnish border" data-zh="我们追逐晴空 — 甚至越过芬兰边境">We chase clear skies — even across the Finnish border</div></div>
+        <div class="usp"><div class="usp-icon">📸</div><div class="usp-title" data-en="Free pro photos" data-zh="免费专业照片">Free pro photos</div><div class="usp-desc" data-en="High-res aurora shots sent the morning after" data-zh="高分辨率极光照片在第二天早上发送">High-res aurora shots sent the morning after</div></div>
+        <div class="usp"><div class="usp-icon">🧥</div><div class="usp-title" data-en="Full thermal gear" data-zh="全套保暖装备">Full thermal gear</div><div class="usp-desc" data-en="Arctic-grade suits and boots — stay warm all night" data-zh="北极级套装和靴子 — 整夜保持温暖">Arctic-grade suits and boots — stay warm all night</div></div>
+        <div class="usp"><div class="usp-icon">🔄</div><div class="usp-title" data-en="Free rebooking" data-zh="免费改期">Free rebooking</div><div class="usp-desc" data-en="Didn't see the lights? Rebook for free next night" data-zh="没看到极光？下次可免费改期">Didn't see the lights? Rebook for free next night</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="section" id="guides">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-en="Meet your guides" data-zh="认识您的导游">Meet your guides</h2>
+        <p data-en="Three locals. Three personalities. One shared obsession — the northern lights." data-zh="三位当地人。三种个性。一个共同的痴迷 — 北极光。">Three locals. Three personalities. One shared obsession — the northern lights.</p>
+      </div>
+      <div class="guides-grid">
+
+        <div class="guide-card">
+          <div class="guide-color-bar" style="background:linear-gradient(90deg,#c8102e,#ff6b6b)"></div>
+          <div class="guide-inner">
+            <div class="guide-top">
+              <img src="images/kamil.jpg" alt="Kamil" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="guide-avatar" style="background:linear-gradient(135deg,#c8102e,#7a0a1e)">K</div>
+              <div class="guide-info">
+                <div class="guide-name-row">
+                  <span class="guide-name">Kamil</span>
+                  <span class="guide-pill" style="background:#ffeaea;color:#c8102e" data-en="Experience guide & lead guide" data-zh="资深导游兼主导游">Experience guide & lead guide</span>
+                </div>
+                <div class="guide-role" data-en="Aurora Seeker · Senior expedition specialist" data-zh="极光追逐者 · 高级探险专家">Aurora Seeker · Senior expedition specialist</div>
+                <div class="guide-tags">
+                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Aurora Seeker" data-zh="极光追逐者">Aurora Seeker</span>
+                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Finland chaser" data-zh="芬兰追逐者">Finland chaser</span>
+                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Photography" data-zh="摄影">Photography</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="guide-quote" style="border-color:#c8102e">
+              <p data-en='"I have been hunting the aurora my entire life — and I mean hunting. I don't sit and wait. I track solar activity, study cloud patterns, and when needed I will drive across the border into Finland without hesitation. Every guest who steps into my bus will see the northern lights. That is not a promise — it is who I am."' data-zh='"我用我的一生追逐北极光。我不会坐等极光出现。我追踪太阳活动，研究云层，必要时我会毫不犹豫地开车越过芬兰边境。踏上我大巴的每一位客人都会看到北极光。这不是承诺 — 这就是我。"'>"I have been hunting the aurora my entire life — and I mean hunting. I don't sit and wait. I track solar activity, study cloud patterns, and when needed I will drive across the border into Finland without hesitation. Every guest who steps into my bus will see the northern lights. That is not a promise — it is who I am."</p>
+            </blockquote>
+            <div class="guide-review-tag" data-en='Guests say: "Kamil made every second exciting — drove to Finland and found the dancing lights!"' data-zh='客人说："卡米尔让每一秒都令人兴奋 — 他开车去芬兰找到了舞动的极光！"'>Guests say: "Kamil made every second exciting — drove to Finland and found the dancing lights!"</div>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-color-bar" style="background:linear-gradient(90deg,#1db87a,#00d4a0)"></div>
+          <div class="guide-inner">
+            <div class="guide-top">
+              <img src="images/hassan.jpg" alt="Hassan" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="guide-avatar" style="background:linear-gradient(135deg,#1db87a,#0a3d22)">H</div>
+              <div class="guide-info">
+                <div class="guide-name-row">
+                  <span class="guide-name">Hassan</span>
+                  <span class="guide-pill" style="background:#e1f5ee;color:#0a6e45" data-en="Local guide & lead guide" data-zh="本地导游兼主导游">Local guide & lead guide</span>
+                </div>
+                <div class="guide-role" data-en="Tromsø local · RedNote specialist · 🇨🇳 中文友好" data-zh="特罗姆瑟本地人 · 小红书专家 · 🇨🇳 中文友好">Tromsø local · RedNote specialist · 🇨🇳 中文友好</div>
+                <div class="guide-tags">
+                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45" data-en="Tromsø local" data-zh="特罗姆瑟本地人">Tromsø local</span>
+                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45">🇨🇳 中文友好</span>
+                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45" data-en="RedNote partner" data-zh="小红书合作伙伴">RedNote partner</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="guide-quote" style="border-color:#1db87a">
+              <p data-en='"I grew up with these mountains, these fjords, these skies. The aurora is not just a light show to me — it is home. I once stayed out until 2am in overcast weather because I refused to give up on a group who had flown all the way from Australia. We found the lights. I always find the lights. That is my promise to you."' data-zh='"我在这些山脉、峡湾和天空下长大。北极光对我来说不仅仅是灯光表演 — 它是家。有一次，我在阴天坚持到凌晨2点，因为我不愿放弃一个从澳大利亚飞来的团队。我们找到了极光。我总能找到极光。这是我对你的承诺。"'>"I grew up with these mountains, these fjords, these skies. The aurora is not just a light show to me — it is home. I once stayed out until 2am in overcast weather because I refused to give up on a group who had flown all the way from Australia. We found the lights. I always find the lights. That is my promise to you."</p>
+            </blockquote>
+            <div class="guide-review-tag" data-en='Guests say: "Hassan stayed on the phone until 2am — we were the ONLY group out that late. THANK YOU!"' data-zh='客人说："哈桑一直打电话到凌晨2点 — 我们是唯一在那么晚还在外面的团队。非常感谢！"'>Guests say: "Hassan stayed on the phone until 2am — we were the ONLY group out that late. THANK YOU!"</div>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-color-bar" style="background:linear-gradient(90deg,#4a7aff,#1a3a6e)"></div>
+          <div class="guide-inner">
+            <div class="guide-top">
+              <img src="images/marius.jpg" alt="Marius" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="guide-avatar" style="background:linear-gradient(135deg,#4a7aff,#1a2a6e)">M</div>
+              <div class="guide-info">
+                <div class="guide-name-row">
+                  <span class="guide-name">Marius</span>
+                  <span class="guide-pill" style="background:#e3eeff;color:#1a3a6e" data-en="Founder & lead guide" data-zh="创始人兼主导游">Founder & lead guide</span>
+                </div>
+                <div class="guide-role" data-en="Snow Travels founder · Arctic expedition veteran" data-zh="Snow Travels创始人 · 北极探险老将">Snow Travels founder · Arctic expedition veteran</div>
+                <div class="guide-tags">
+                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Founder" data-zh="创始人">Founder</span>
+                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Arctic expert" data-zh="北极专家">Arctic expert</span>
+                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Decades of experience" data-zh="数十年经验">Decades of experience</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="guide-quote" style="border-color:#4a7aff">
+              <p data-en='"I built Snow Travels from nothing because I believe this region is the most magical place on Earth — and everyone deserves to experience it properly. I have spent decades learning these mountains, predicting this weather, reading this sky. When you travel with me, you are not a tourist. You are a guest in my home."' data-zh='"我从零开始创建了Snow Travels，因为我相信这个地区是地球上最神奇的地方，每个人都值得好好体验它。我花了几十年学习这些山脉，预测天气，解读天空。当你和我一起旅行时，你不是游客。你是我家的客人。"'>"I built Snow Travels from nothing because I believe this region is the most magical place on Earth — and everyone deserves to experience it properly. I have spent decades learning these mountains, predicting this weather, reading this sky. When you travel with me, you are not a tourist. You are a guest in my home."</p>
+            </blockquote>
+            <div class="guide-review-tag" data-en='Guests say: "Marius's honesty, integrity and experience is absolutely unmatched in all of Tromsø."' data-zh='客人说："马里乌斯的诚实、正直和经验在整个特罗姆瑟是无与伦比的。"'>Guests say: "Marius's honesty, integrity and experience is absolutely unmatched in all of Tromsø."</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section bg-dark" id="reviews">
+    <div class="container">
+      <div class="section-header light">
+        <h2 data-en="What guests say" data-zh="客人怎么说">What guests say</h2>
+        <p data-en="4.9 stars · 1,216 verified reviews on GetYourGuide" data-zh="4.9颗星 · GetYourGuide上1,216条认证评价">4.9 stars · 1,216 verified reviews on GetYourGuide</p>
+        <div class="stars-big">★★★★★</div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-top">
+            <div><div class="reviewer-name">Group from Australia 🇦🇺</div><div class="reviewer-src">Verified · GetYourGuide</div></div>
+            <div class="rev-stars">★★★★★</div>
+          </div>
+          <p class="review-text" data-en='"Hassan was on the phone constantly checking weather openings and worked really hard to find a clearing in the clouds. We were the only group out so late. Thank you to Marius and Hassan for your honesty and integrity. I would not recommend anyone else in Tromsø."' data-zh='"哈桑不断打电话检查天气，非常努力地寻找云层中的空隙。我们是唯一在那么晚还在外面的团队。感谢马里乌斯和哈桑的诚实和正直。"'>"Hassan was on the phone constantly checking weather openings and worked really hard to find a clearing in the clouds. We were the only group out so late. Thank you to Marius and Hassan for your honesty and integrity. I would not recommend anyone else in Tromsø."</p>
+          <span class="rev-badge" data-en="Hassan mentioned" data-zh="提到哈桑">Hassan mentioned</span>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div><div class="reviewer-name">Erik K. 🇩🇪</div><div class="reviewer-src">Verified · Tripadvisor</div></div>
+            <div class="rev-stars">★★★★★</div>
+          </div>
+          <p class="review-text" data-en='"Hassan said he himself had not seen the lights this beautiful in a long time. Both owners can be trusted unconditionally — they do this not just as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."' data-zh='"哈桑说他自己很久没见过这么美的极光了。两位主人都可以无条件信任 — 他们不仅仅是把这当作工作，而是以极大的热情和激情在做这件事。我可以毫无保留地推荐Snow Travels。"'>"Hassan said he himself had not seen the lights this beautiful in a long time. Both owners can be trusted unconditionally — they do this not just as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."</p>
+          <span class="rev-badge" data-en="Hassan mentioned" data-zh="提到哈桑">Hassan mentioned</span>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div><div class="reviewer-name">Sudha · India 🇮🇳</div><div class="reviewer-src">Verified · GetYourGuide · Nov 2025</div></div>
+            <div class="rev-stars">★★★★★</div>
+          </div>
+          <p class="review-text" data-en='"Absolutely stunning experience with an amazing tour guide. Just completed my dream bucket list. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down for us."' data-zh='"有一位令人惊叹的导游，体验绝对令人惊叹。刚刚完成了我梦想中的愿望清单。我们的导游开车去了芬兰，在我们回家的路上看到了舞动的极光。"'>"Absolutely stunning experience with an amazing tour guide. Just completed my dream bucket list. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down for us."</p>
+          <span class="rev-badge" data-en="Kamil mentioned" data-zh="提到卡米尔">Kamil mentioned</span>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div><div class="reviewer-name">Traveller from UK 🇬🇧</div><div class="reviewer-src">Verified · Tripadvisor</div></div>
+            <div class="rev-stars">★★★★★</div>
+          </div>
+          <p class="review-text" data-en='"We were NEVER rushed and had the most perfect time. Marius has so much experience that everyone on our tour left buzzing. Even if you are not lucky enough to see the lights you will still have the most amazing time — his determination to make customers happy is extraordinary."' data-zh='"我们从未被催促，度过了最完美的时光。马里乌斯经验丰富，我们团队中的每个人都兴奋地离开了。即使你没有幸运地看到极光，你仍然会度过最美好的时光。"'>"We were NEVER rushed and had the most perfect time. Marius has so much experience that everyone on our tour left buzzing. Even if you are not lucky enough to see the lights you will still have the most amazing time — his determination to make customers happy is extraordinary."</p>
+          <span class="rev-badge" data-en="Marius mentioned" data-zh="提到马里乌斯">Marius mentioned</span>
+        </div>
+      </div>
+      <div class="reviews-cta">
+        <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="btn-reviews" data-en="Read all 1,216 reviews on GetYourGuide →" data-zh="在GetYourGuide上阅读全部1,216条评价 →">Read all 1,216 reviews on GetYourGuide →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section bg-light" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-en="Book your tour" data-zh="预订您的旅游">Book your tour</h2>
+        <p data-en="Choose how you'd like to book — direct or through a trusted platform" data-zh="选择您喜欢的预订方式">Choose how you'd like to book — direct or through a trusted platform</p>
+      </div>
+      <div class="booking-grid">
+        <div class="booking-card booking-featured">
+          <div class="booking-icon">🎟️</div>
+          <h3 data-en="Book direct" data-zh="直接预订">Book direct</h3>
+          <p data-en="Contact us directly for the best availability and personal service." data-zh="直接联系我们获得最佳可用性和个人服务。">Contact us directly for the best availability and personal service.</p>
+          <a href="mailto:info@snow-travels.com" class="btn-primary" data-en="Email us →" data-zh="发邮件给我们 →">Email us →</a>
+        </div>
+        <div class="booking-card">
+          <div class="booking-icon">🌍</div>
+          <h3>GetYourGuide</h3>
+          <p data-en="Rated #1 in Tromsø. 1,216 verified reviews." data-zh="特罗姆瑟排名第一。1,216条认证评价。">Rated #1 in Tromsø. 1,216 verified reviews.</p>
+          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="btn-outline-dark" data-en="Book on GYG →" data-zh="在GYG上预订 →">Book on GYG →</a>
+        </div>
+        <div class="booking-card">
+          <div class="booking-icon">✈️</div>
+          <h3>Viator</h3>
+          <p data-en="Top rated on Viator. Likely to sell out — book early." data-zh="Viator顶级评分。可能售罄 — 提前预订。">Top rated on Viator. Likely to sell out — book early.</p>
+          <a href="https://www.viator.com" target="_blank" class="btn-outline-dark" data-en="Book on Viator →" data-zh="在Viator上预订 →">Book on Viator →</a>
+        </div>
+        <div class="booking-card rn-card">
+          <div class="booking-icon">🇨🇳</div>
+          <h3 data-en="Book via RedNote" data-zh="通过小红书预订">Book via RedNote</h3>
+          <p data-en="Most trusted RedNote partner in Tromsø. Use code for 10% off and share!" data-zh="小红书最受信赖合作伙伴。使用代码享受九折优惠并分享！">Most trusted RedNote partner in Tromsø. Use code for 10% off and share!</p>
+          <div class="mini-code">REDNOTE10</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">❄ snow-travels.com</div>
+          <p class="footer-desc" data-en="Tromsø's most passionate northern lights guides. Rated #1 on GetYourGuide. We chase the aurora — all the way to Finland if that's what it takes." data-zh="特罗姆瑟最热情的北极光导游。GetYourGuide排名第一。我们为您追逐极光 — 必要时甚至去芬兰。">Tromsø's most passionate northern lights guides. Rated #1 on GetYourGuide. We chase the aurora — all the way to Finland if that's what it takes.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-en="Tours" data-zh="旅游">Tours</div>
+          <a href="#tours" data-en="VIP Minibus Tour" data-zh="VIP迷你巴士游">VIP Minibus Tour</a>
+          <a href="#tours" data-en="Group Bus Tour" data-zh="团体巴士游">Group Bus Tour</a>
+          <a href="#booking" data-en="Book now" data-zh="立即预订">Book now</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-en="Book via" data-zh="预订方式">Book via</div>
+          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a>
+          <a href="https://www.viator.com" target="_blank">Viator</a>
+          <a href="#rednote" data-en="RedNote (10% off)" data-zh="小红书（九折）">RedNote (10% off)</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-en="Contact" data-zh="联系">Contact</div>
+          <a href="mailto:info@snow-travels.com">info@snow-travels.com</a>
+          <a href="#guides" data-en="Meet the guides" data-zh="认识导游">Meet the guides</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Snow Travels AS · Tromsø, Norway</span>
+        <span data-en="The most passionate aurora guides in the Arctic" data-zh="北极最热情的极光导游">The most passionate aurora guides in the Arctic</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI CHAT -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">
+      <span>💬</span>
+      <span data-en="Ask us anything" data-zh="随时提问">Ask us anything</span>
+    </button>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <div class="chat-header-left"><div class="chat-dot"></div><span data-en="Snow Travels AI · Online · EN & 中文" data-zh="Snow Travels AI · 在线 · 中文 & EN">Snow Travels AI · Online · EN & 中文</span></div>
+        <button onclick="toggleChat()" class="chat-close">✕</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot" data-en="Hi! Ask me about tours, pricing, best dates to see the aurora, what to wear — or how to get 10% off with REDNOTE10! 🌌" data-zh="你好！问我关于旅游、价格、看极光的最佳日期、穿什么 — 或者如何用REDNOTE10享受九折优惠！🌌">Hi! Ask me about tours, pricing, best dates to see the aurora, what to wear — or how to get 10% off with REDNOTE10! 🌌</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything... / 用中文提问" onkeydown="if(event.key==='Enter')sendChat()" />
+        <button onclick="sendChat()" class="chat-send">→</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
