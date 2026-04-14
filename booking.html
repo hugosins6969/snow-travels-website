@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Tour — Snow Travels Tromsø</title>
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .booking-hero { background: var(--deep); padding: 120px 24px 64px; text-align: center; }
+    .booking-hero h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: clamp(32px,5vw,52px); font-weight: 900; margin-bottom: 12px; }
+    .booking-hero p { color: rgba(255,255,255,0.6); font-size: 16px; max-width: 480px; margin: 0 auto; }
+
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .booking-card {
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .booking-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .booking-card.featured { border-color: var(--green); border-width: 2px; }
+    .booking-card.featured::before {
+      content: 'Most popular'; display: block;
+      background: var(--green); color: #fff;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 20px;
+      display: inline-block; margin-bottom: 16px;
+    }
+    .bc-icon { font-size: 36px; margin-bottom: 14px; }
+    .bc-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .bc-price { font-size: 32px; font-weight: 800; color: var(--dark-green); margin-bottom: 4px; font-family: 'Playfair Display', serif; }
+    .bc-price span { font-size: 14px; font-weight: 400; color: var(--muted); }
+    .bc-desc { color: var(--muted); font-size: 13px; margin-bottom: 20px; line-height: 1.6; }
+    .bc-includes { list-style: none; margin-bottom: 24px; }
+    .bc-includes li { font-size: 12px; color: var(--muted); padding: 5px 0; display: flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--border); }
+    .bc-includes li::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+    .platforms-title { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .platforms-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .platform-btn {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 8px; padding: 9px 16px;
+      font-size: 12px; font-weight: 600; color: var(--text);
+      transition: all 0.2s; cursor: pointer;
+    }
+    .platform-btn:hover { border-color: var(--green); color: var(--green); background: #fff; }
+
+    .rednote-booking {
+      background: #c8102e; border-radius: 20px;
+      padding: 40px; margin-bottom: 40px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    .rnb-title { color: #fff; font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    .rnb-sub { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.6; }
+    .rnb-code-box { text-align: center; background: rgba(255,255,255,0.15); border: 1px dashed rgba(255,255,255,0.4); border-radius: 14px; padding: 16px 28px; }
+    .rnb-label { color: rgba(255,255,255,0.6); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .rnb-code { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: 4px; margin: 4px 0; }
+    .rnb-disc { background: #fff; color: #c8102e; display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+
+    .contact-box {
+      background: var(--cream); border-radius: 20px;
+      padding: 40px; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .contact-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+    .contact-box p { color: var(--muted); font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
+    .contact-methods { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width:900px) {
+      .booking-grid { grid-template-columns: 1fr; }
+      .rednote-booking { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-logo"><span class="snowflake">❄</span> Snow Travels</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link" data-en="Home" data-zh="主页">Home</a>
+    <a href="tours.html" class="nav-link" data-en="Tours" data-zh="旅游">Tours</a>
+    <a href="booking.html" class="nav-link active" data-en="Booking" data-zh="预订">Booking</a>
+    <a href="faq.html" class="nav-link" data-en="FAQ" data-zh="常见问题">FAQ</a>
+    <a href="photos.html" class="nav-link" data-en="Photos" data-zh="照片">Photos</a>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中文</button>
+    <a href="booking.html" class="nav-link nav-cta" data-en="Book now" data-zh="立即预订">Book now</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="tours.html" onclick="closeMobile()">Tours</a>
+  <a href="booking.html" onclick="closeMobile()">Booking</a>
+  <a href="faq.html" onclick="closeMobile()">FAQ</a>
+  <a href="photos.html" onclick="closeMobile()">Photos</a>
+  <a href="booking.html" onclick="closeMobile()" class="mobile-book">Book now →</a>
+</div>
+
+<div class="booking-hero">
+  <div class="section-label" data-en="Reserve your spot" data-zh="预留您的名额">Reserve your spot</div>
+  <h1 data-en="Book your northern lights tour" data-zh="预订您的北极光之旅">Book your northern lights tour</h1>
+  <p data-en="Choose a tour below and select your preferred booking platform. Free cancellation up to 24 hours before." data-zh="在下方选择旅游并选择您喜欢的预订平台。出发前24小时内可免费取消。">Choose a tour below and select your preferred booking platform. Free cancellation up to 24 hours before.</p>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="booking-grid">
+      <div class="booking-card featured">
+        <div class="bc-icon">🚐</div>
+        <div class="bc-name" data-en="Minibus Tour" data-zh="迷你巴士游">Minibus Tour</div>
+        <div class="bc-price">2,400 kr <span data-en="per person" data-zh="每人">per person</span></div>
+        <div class="bc-desc" data-en="Max 15 guests · 5–9 hrs unlimited · Most personal experience" data-zh="最多15位客人 · 5–9小时无限追逐 · 最私人的体验">Max 15 guests · 5–9 hrs unlimited · Most personal experience</div>
+        <ul class="bc-includes">
+          <li data-en="Full thermal suit" data-zh="全套保暖服">Full thermal suit</li>
+          <li data-en="Hot meal by bonfire" data-zh="篝火旁热餐">Hot meal by bonfire</li>
+          <li data-en="Free pro photos" data-zh="免费专业照片">Free pro photos</li>
+          <li data-en="Unlimited aurora hunt" data-zh="无限极光追逐">Unlimited aurora hunt</li>
+          <li data-en="Hotel pickup included" data-zh="含酒店接送">Hotel pickup included</li>
+        </ul>
+        <div class="platforms-title" data-en="Book via" data-zh="预订方式">Book via</div>
+        <div class="platforms-row">
+          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="platform-btn">🌍 GetYourGuide</a>
+          <a href="https://www.viator.com" target="_blank" class="platform-btn">✈️ Viator</a>
+          <a href="mailto:info@snow-travels.com" class="platform-btn">📧 Direct</a>
+        </div>
+      </div>
+
+      <div class="booking-card">
+        <div class="bc-icon">🚌</div>
+        <div class="bc-name" data-en="Bus Tour" data-zh="巴士游">Bus Tour</div>
+        <div class="bc-price">1,200 kr <span data-en="per person" data-zh="每人">per person</span></div>
+        <div class="bc-desc" data-en="Max 50 guests · 5–9 hrs · Great value group experience" data-zh="最多50位客人 · 5–9小时 · 超值团体体验">Max 50 guests · 5–9 hrs · Great value group experience</div>
+        <ul class="bc-includes">
+          <li data-en="Full thermal suit" data-zh="全套保暖服">Full thermal suit</li>
+          <li data-en="Hot drinks & snacks" data-zh="热饮和小吃">Hot drinks & snacks</li>
+          <li data-en="Free pro photos" data-zh="免费专业照片">Free pro photos</li>
+          <li data-en="Expert local guide" data-zh="专业本地导游">Expert local guide</li>
+          <li data-en="Hotel pickup included" data-zh="含酒店接送">Hotel pickup included</li>
+        </ul>
+        <div class="platforms-title" data-en="Book via" data-zh="预订方式">Book via</div>
+        <div class="platforms-row">
+          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="platform-btn">🌍 GetYourGuide</a>
+          <a href="https://www.viator.com" target="_blank" class="platform-btn">✈️ Viator</a>
+          <a href="mailto:info@snow-travels.com" class="platform-btn">📧 Direct</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- REDNOTE -->
+    <div class="rednote-booking">
+      <div>
+        <div class="rnb-title" data-en="🇨🇳 Booking via RedNote? Get 10% off" data-zh="🇨🇳 通过小红书预订？享受九折优惠">🇨🇳 Booking via RedNote? Get 10% off</div>
+        <div class="rnb-sub" data-en="Snow Travels is the most trusted RedNote / 小红书 partner in Tromsø. Use our exclusive promo code at checkout for 10% off any tour. Share with friends and help them save too!" data-zh="Snow Travels是特罗姆瑟小红书最受信赖的合作伙伴。在结账时使用我们的专属优惠码可享受任何旅游9折优惠。分享给朋友，帮助他们也节省！">Snow Travels is the most trusted RedNote / 小红书 partner in Tromsø. Use our exclusive promo code at checkout for 10% off any tour. Share with friends and help them save too!</div>
+      </div>
+      <div class="rnb-code-box">
+        <div class="rnb-label" data-en="Promo code" data-zh="优惠码">Promo code</div>
+        <div class="rnb-code">REDNOTE10</div>
+        <div class="rnb-disc">10% off · 九折</div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+      <h3 data-en="Need help booking?" data-zh="需要帮助预订吗？">Need help booking?</h3>
+      <p data-en="Not sure which tour is right for you? Want to book for a large group? Have a special request? Contact us directly — we reply fast." data-zh="不确定哪个旅游适合您？想为大型团体预订？有特殊要求？直接联系我们 — 我们回复很快。">Not sure which tour is right for you? Want to book for a large group? Have a special request? Contact us directly — we reply fast.</p>
+      <div class="contact-methods">
+        <a href="mailto:info@snow-travels.com" class="btn btn-green" data-en="Email us →" data-zh="发邮件给我们 →">Email us →</a>
+        <a href="https://www.instagram.com/snowtravelstromso/" target="_blank" class="btn btn-outline" data-en="Instagram DM" data-zh="Instagram私信">Instagram DM</a>
+        <a href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank" class="btn btn-outline" data-en="RedNote 小红书" data-zh="小红书">RedNote 小红书</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="footer-logo"><span class="snowflake">❄</span> Snow Travels</div><p class="footer-desc">Tromsø's most passionate aurora guides.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Pages</div><a href="index.html">Home</a><a href="tours.html">Tours</a><a href="booking.html">Booking</a><a href="faq.html">FAQ</a><a href="photos.html">Photos</a></div>
+    <div class="footer-col"><div class="footer-col-title">Book via</div><a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a><a href="https://www.viator.com" target="_blank">Viator</a></div>
+    <div class="footer-col"><div class="footer-col-title">Follow us</div><a href="https://www.instagram.com/snowtravelstromso/" target="_blank">Instagram</a><a href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank">小红书</a><a href="mailto:info@snow-travels.com">Email us</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Snow Travels AS · Tromsø, Norway</span></div>
+</footer>
+<script>
+let currentLang='en';
+function toggleLang(){currentLang=currentLang==='en'?'zh':'en';document.getElementById('langBtn').textContent=currentLang==='en'?'中文':'EN';document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+currentLang);if(t)el.innerHTML=t;});}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);});
+</script>
+</body>
+</html>
