@@ -4,34 +4,35 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ — Snow Travels Tromsø</title>
-  <link rel="stylesheet" href="shared.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     .faq-hero { background: var(--deep); padding: 120px 24px 64px; text-align: center; }
-    .faq-hero h1 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(32px,5vw,52px); font-weight:900; margin-bottom:12px; }
+    .faq-hero h1 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:clamp(32px,5vw,52px); font-weight:600; margin-bottom:12px; }
     .faq-hero p { color:rgba(255,255,255,0.6); font-size:16px; max-width:480px; margin:0 auto; }
     .faq-cats { display:flex; gap:8px; justify-content:center; margin-bottom:48px; flex-wrap:wrap; }
-    .faq-cat-btn { background:#fff; border:1.5px solid var(--border); color:var(--muted); padding:8px 20px; border-radius:30px; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
+    .faq-cat-btn { background:#fff; border:1.5px solid var(--border); color:var(--muted); padding:8px 20px; border-radius:30px; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; }
     .faq-cat-btn:hover { border-color:var(--green); color:var(--green); }
     .faq-cat-btn.active { background:var(--dark-green); border-color:var(--dark-green); color:#fff; }
     .faq-group { margin-bottom:48px; }
-    .faq-group-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--green); display:inline-block; }
+    .faq-group-title { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--green); display:inline-block; }
     .faq-item { border-bottom:1px solid var(--border); }
     .faq-q { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; gap:16px; }
-    .faq-q-text { font-size:15px; font-weight:600; color:var(--text); line-height:1.4; }
+    .faq-q-text { font-size:15px; font-weight:500; color:var(--text); line-height:1.4; font-family:'Inter',sans-serif; }
     .faq-arrow { color:var(--green); font-size:18px; flex-shrink:0; transition:transform 0.25s; }
     .faq-item.open .faq-arrow { transform:rotate(45deg); }
-    .faq-a { display:none; padding:0 0 18px; font-size:14px; color:var(--muted); line-height:1.75; max-width:720px; }
+    .faq-a { display:none; padding:0 0 18px; font-size:14px; color:var(--muted); line-height:1.75; max-width:720px; font-family:'Inter',sans-serif; }
     .faq-a.open { display:block; }
     .faq-a strong { color:var(--text); }
     .faq-a a { color:var(--green); }
     .cta-box { background:var(--deep); border-radius:20px; padding:48px; text-align:center; margin-top:40px; }
-    .cta-box h3 { font-family:'Playfair Display',serif; color:#fff; font-size:26px; font-weight:700; margin-bottom:10px; }
+    .cta-box h3 { font-family:'Cormorant Garamond',serif; color:#fff; font-size:32px; font-weight:400; margin-bottom:10px; }
     .cta-box p { color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:24px; }
   </style>
 </head>
 <body>
 <nav class="nav" id="nav">
-  <div class="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;letter-spacing:0.5px;">❄ Snow <span style="color:#4ade80">Travels</span></div>
+  <div class="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff;">❄ Snow <span style="color:#4ade80">Travels</span></div>
   <div class="nav-links">
     <a href="index.html" class="nav-link">Home</a>
     <a href="tours.html" class="nav-link">Tours</a>
@@ -119,7 +120,7 @@
       <div class="faq-group-title">Booking & cancellation</div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggle(this)"><span class="faq-q-text">How do I book?</span><span class="faq-arrow">+</span></div>
-        <div class="faq-a">You can book via <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a> or directly by emailing us at <a href="mailto:info@snow-travels.com">info@snow-travels.com</a>.</div>
+        <div class="faq-a">You can book via <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a>, <a href="https://www.viator.com" target="_blank">Viator</a>, or directly by emailing us at <a href="/cdn-cgi/l/email-protection#82ebece4edc2f1ecedf5aff6f0e3f4e7eef1ace1edef"><span class="__cf_email__" data-cfemail="6900070f06291a07061e441d1b081f0c051a470a0604">[email&#160;protected]</span></a>. For 10% off, RedNote / 小红书 users can use promo code <strong>REDNOTE10</strong> at checkout.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggle(this)"><span class="faq-q-text">What is the cancellation policy?</span><span class="faq-arrow">+</span></div>
