@@ -1,395 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snow Travels – Northern Lights Tours Tromsø</title>
-  <meta name="description" content="Chase the northern lights with Tromsø's #1 rated tour company on GetYourGuide. 97.54% success rate over 3 years. 1,780+ reviews. Minibus & group tours. Book now." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-logo">❄ snow-travels.com</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#tours" class="nav-link" data-en="Tours" data-zh="旅游">Tours</a>
-      <a href="#guides" class="nav-link" data-en="Guides" data-zh="导游">Guides</a>
-      <a href="#reviews" class="nav-link" data-en="Reviews" data-zh="评价">Reviews</a>
-      <button class="lang-btn" onclick="toggleLang()" id="langBtn">中文</button>
-      <a href="#booking" class="btn-nav" data-en="Book now" data-zh="立即预订">Book now</a>
-    </div>
-    <button class="hamburger" onclick="toggleMenu()" id="hamburger">☰</button>
-  </nav>
+/* === NAV === */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,26,18,0.95); backdrop-filter: blur(10px); padding: 14px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid rgba(255,255,255,0.1); }
+.nav-logo { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.3px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link { color: rgba(255,255,255,0.75); font-size: 14px; transition: color 0.2s; }
+.nav-link:hover { color: #fff; }
+.lang-btn { background: rgba(255,255,255,0.12); color: #fff; border: 0.5px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 5px 14px; font-size: 12px; cursor: pointer; transition: background 0.2s; }
+.lang-btn:hover { background: rgba(255,255,255,0.2); }
+.btn-nav { background: #1db87a; color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: background 0.2s; }
+.btn-nav:hover { background: #17a06a; }
+.hamburger { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; }
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#tours" onclick="closeMobile()" data-en="Tours" data-zh="旅游">Tours</a>
-    <a href="#guides" onclick="closeMobile()" data-en="Guides" data-zh="导游">Guides</a>
-    <a href="#reviews" onclick="closeMobile()" data-en="Reviews" data-zh="评价">Reviews</a>
-    <a href="#rednote" onclick="closeMobile()" data-en="RedNote 🇨🇳" data-zh="小红书 🇨🇳">RedNote 🇨🇳</a>
-    <a href="#booking" onclick="closeMobile()" class="mobile-book-btn" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
-  </div>
+/* === MOBILE MENU === */
+.mobile-menu { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: #0a1a12; z-index: 99; padding: 20px; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mobile-menu a { color: rgba(255,255,255,0.8); font-size: 16px; padding: 12px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+.mobile-menu.open { display: flex; }
+.mobile-book-btn { background: #1db87a !important; color: #fff !important; border-radius: 8px; padding: 12px 0 !important; text-align: center; margin-top: 8px; border: none !important; }
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="aurora-bg">
-      <div class="stars"></div>
-      <div class="aurora a1"></div>
-      <div class="aurora a2"></div>
-      <div class="aurora a3"></div>
-      <div class="mountain"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-tag" data-en="TROMSØ, NORWAY · #1 ON GETYOURGUIDE" data-zh="特罗姆瑟，挪威 · GetYourGuide 第一名">TROMSØ, NORWAY · #1 ON GETYOURGUIDE</div>
-      <h1 data-en="Chase the northern lights<br>with Tromsø's best guides" data-zh="与特罗姆瑟最好的导游<br>一起追逐北极光">Chase the northern lights<br>with Tromsø's best guides</h1>
-      <p class="hero-sub" data-en="Small groups · Expert guides · 97.54% aurora success rate · Unlimited chase" data-zh="小团体 · 专业导游 · 97.54%成功率 · 无限追逐">Small groups · Expert guides · 97.54% aurora success rate · Unlimited chase</p>
-      <div class="hero-btns">
-        <a href="#booking" class="btn-primary" data-en="Book VIP — 2,400 kr →" data-zh="预订VIP游 — 2,400克朗 →">Book VIP — 2,400 kr →</a>
-        <a href="#tours" class="btn-outline" data-en="See all tours" data-zh="查看所有旅游">See all tours</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat">
-          <span class="hstat-num">97.54%</span>
-          <span class="hstat-label" data-en="Aurora success rate (3 years)" data-zh="北极光成功率（3年）">Aurora success rate (3 years)</span>
-        </div>
-        <div class="hstat-divider"></div>
-        <div class="hstat">
-          <span class="hstat-num">1,780+</span>
-          <span class="hstat-label" data-en="Verified 5-star reviews" data-zh="认证五星评价">Verified 5-star reviews</span>
-        </div>
-        <div class="hstat-divider"></div>
-        <div class="hstat">
-          <span class="hstat-num">#1</span>
-          <span class="hstat-label" data-en="In Tromsø on GYG" data-zh="特罗姆瑟排名第一">In Tromsø on GYG</span>
-        </div>
-      </div>
-    </div>
-    <a href="#tours" class="scroll-hint">↓</a>
-  </section>
+/* === HERO === */
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 24px 60px; overflow: hidden; }
+.aurora-bg { position: absolute; inset: 0; background: #060e0a; }
+.stars { position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 30% 8%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 55% 20%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 75% 10%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 88% 25%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 60% 35%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 90% 45%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 45% 60%, rgba(255,255,255,0.3), transparent), radial-gradient(1px 1px at 15% 65%, rgba(255,255,255,0.4), transparent); animation: twinkle 4s ease-in-out infinite; }
+@keyframes twinkle { 0%,100%{opacity:.6} 50%{opacity:1} }
+.aurora { position: absolute; width: 200%; height: 100%; }
+.a1 { top:15%;height:45%;background:radial-gradient(ellipse at 40% 50%,rgba(29,184,122,0.7) 0%,rgba(10,110,69,0.4) 40%,transparent 70%);animation:au1 9s ease-in-out infinite; }
+.a2 { top:8%;height:55%;background:radial-gradient(ellipse at 62% 50%,rgba(0,212,160,0.5) 0%,rgba(0,102,68,0.3) 40%,transparent 70%);animation:au2 13s ease-in-out infinite; }
+.a3 { top:30%;height:38%;background:radial-gradient(ellipse at 28% 50%,rgba(107,74,184,0.4) 0%,rgba(45,29,92,0.2) 50%,transparent 75%);animation:au3 10s ease-in-out infinite; }
+@keyframes au1 { 0%,100%{transform:translateX(-20%) scaleY(1);opacity:.6} 50%{transform:translateX(2%) scaleY(1.3);opacity:.9} }
+@keyframes au2 { 0%,100%{transform:translateX(0%) scaleY(1.1);opacity:.4} 50%{transform:translateX(-18%) scaleY(.9);opacity:.75} }
+@keyframes au3 { 0%,100%{transform:translateX(-8%) scaleY(.9);opacity:.35} 50%{transform:translateX(6%) scaleY(1.15);opacity:.65} }
+.mountain { position:absolute;bottom:0;left:0;right:0;height:100px;background:#04080a;clip-path:polygon(0 90%,6% 52%,12% 68%,20% 30%,30% 55%,40% 20%,50% 46%,61% 24%,71% 50%,81% 34%,90% 54%,100% 40%,100% 100%,0 100%); }
+.hero-content { position: relative; z-index: 2; max-width: 720px; }
+.hero-tag { display: inline-block; background: rgba(255,255,255,0.12); color: #a8ffd8; font-size: 11px; letter-spacing: 1.2px; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
+.hero h1 { color: #fff; font-size: clamp(32px, 6vw, 58px); font-weight: 700; line-height: 1.15; margin-bottom: 16px; text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
+.hero-sub { color: rgba(200,255,220,0.85); font-size: 16px; margin-bottom: 32px; }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-primary { background: #fff; color: #0a3d22; padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; transition: transform 0.15s, box-shadow 0.15s; display: inline-block; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.btn-outline { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 500; transition: background 0.2s; display: inline-block; }
+.btn-outline:hover { background: rgba(255,255,255,0.2); }
+.hero-stats { display: flex; align-items: center; justify-content: center; gap: 24px; background: rgba(0,0,0,0.35); backdrop-filter: blur(8px); border-radius: 14px; padding: 16px 28px; border: 0.5px solid rgba(255,255,255,0.1); }
+.hstat { text-align: center; }
+.hstat-num { display: block; font-size: 26px; font-weight: 700; color: #1db87a; line-height: 1; }
+.hstat-label { display: block; font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+.hstat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
+.scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.4); font-size: 20px; animation: bounce 2s ease-in-out infinite; z-index: 2; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
-  <!-- REDNOTE BANNER -->
-  <div class="rednote-banner" id="rednote">
-    <div class="rn-inner">
-      <div class="rn-left">
-        <span class="rn-flag">🇨🇳</span>
-        <div>
-          <div class="rn-title" data-en="Most trusted RedNote partner in Tromsø · 官方认证" data-zh="特罗姆瑟小红书最受信赖合作伙伴 · 官方认证">Most trusted RedNote partner in Tromsø · 官方认证</div>
-          <div class="rn-sub" data-en="Use promo code for 10% off · Share with friends and spread the word!" data-zh="使用优惠码享受九折优惠 · 分享给朋友，让更多人知道！">Use promo code for 10% off · Share with friends and spread the word!</div>
-        </div>
-      </div>
-      <div class="rn-code-box">
-        <div class="rn-code-label" data-en="Promo code" data-zh="优惠码">Promo code</div>
-        <div class="rn-code">REDNOTE10</div>
-        <div class="rn-discount">10% off · 九折</div>
-      </div>
-    </div>
-  </div>
+/* === REDNOTE BANNER === */
+.rednote-banner { background: #c8102e; padding: 14px 32px; }
+.rn-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.rn-left { display: flex; align-items: center; gap: 14px; }
+.rn-flag { font-size: 24px; }
+.rn-title { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.rn-sub { color: rgba(255,255,255,0.85); font-size: 12px; }
+.rn-code-box { text-align: center; background: rgba(255,255,255,0.15); border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; padding: 10px 20px; }
+.rn-code-label { color: rgba(255,255,255,0.7); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.rn-code { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: 3px; margin: 2px 0; }
+.rn-discount { background: #fff; color: #c8102e; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; display: inline-block; }
 
-  <!-- TOURS -->
-  <section class="section bg-light" id="tours">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-en="Choose your experience" data-zh="选择您的体验">Choose your experience</h2>
-        <p data-en="Two ways to chase the lights — both unforgettable" data-zh="两种追光方式 — 都令人难忘">Two ways to chase the lights — both unforgettable</p>
-      </div>
-      <div class="tours-grid">
-        <div class="tour-card featured">
-          <div class="tour-img-wrap">
-            <img src="images/vip-tour.jpg" alt="VIP Northern Lights Tour" class="tour-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="tour-img-fallback vip-fallback">🌌</div>
-            <div class="tour-badges">
-              <span class="badge-vip">MINIBUS</span>
-              <span class="badge-hot">🔥 Bestseller</span>
-            </div>
-          </div>
-          <div class="tour-body">
-            <h3 data-en="Northern Lights Minibus Tour" data-zh="北极光迷你巴士游">Northern Lights Minibus Tour</h3>
-            <p class="tour-desc" data-en="Our most personal aurora experience. Max 15 guests in a comfortable minibus with unlimited chasing — we follow the lights across mountains, fjords and all the way to Finland if needed. No time limits, no compromises." data-zh="我们最私人的极光体验。最多15位客人乘坐舒适迷你巴士，无限追逐极光 — 我们穿越山脉、峡湾，必要时一路追到芬兰。没有时间限制，没有妥协。">Our most personal aurora experience. Max 15 guests in a comfortable minibus with unlimited chasing — we follow the lights across mountains, fjords and all the way to Finland if needed. No time limits, no compromises.</p>
-            <ul class="tour-includes">
-              <li data-en="✓ Intimate group of max 15 guests" data-zh="✓ 最多15位客人的亲密小团体">✓ Intimate group of max 15 guests</li>
-              <li data-en="✓ Full thermal suit included" data-zh="✓ 包括全套保暖服">✓ Full thermal suit included</li>
-              <li data-en="✓ Hot meal & drinks by bonfire" data-zh="✓ 篝火旁的热餐和饮料">✓ Hot meal & drinks by bonfire</li>
-              <li data-en="✓ Free professional photos" data-zh="✓ 免费专业照片">✓ Free professional photos</li>
-              <li data-en="✓ 5–9 hours unlimited aurora hunt" data-zh="✓ 5–9小时无限北极光追逐">✓ 5–9 hours unlimited aurora hunt</li>
-            </ul>
-            <div class="tour-footer">
-              <div class="tour-price">
-                <span class="price-amount">2,400 kr</span>
-                <span class="price-per" data-en="per person" data-zh="每人">per person</span>
-              </div>
-              <a href="#booking" class="btn-book" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
-            </div>
-          </div>
-        </div>
+/* === SECTIONS === */
+.section { padding: 80px 24px; }
+.bg-light { background: #f7f9f8; }
+.bg-dark { background: #0a1a12; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-header h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; margin-bottom: 10px; }
+.section-header p { color: #555; font-size: 16px; }
+.section-header.light h2 { color: #fff; }
+.section-header.light p { color: rgba(255,255,255,0.65); }
+.stars-big { color: #f5c842; font-size: 24px; margin-top: 10px; }
 
-        <div class="tour-card">
-          <div class="tour-img-wrap">
-            <img src="images/bus-tour.jpg" alt="Group Northern Lights Bus Tour" class="tour-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="tour-img-fallback bus-fallback">🚌</div>
-            <div class="tour-badges">
-              <span class="badge-group">GROUP</span>
-            </div>
-          </div>
-          <div class="tour-body">
-            <h3 data-en="Northern Lights Bus Tour" data-zh="北极光巴士游">Northern Lights Bus Tour</h3>
-            <p class="tour-desc" data-en="A great-value group adventure. Join up to 50 fellow aurora hunters on a comfortable coach. Same expert guides, same passion, same mission — find the lights." data-zh="超值团体冒险。与多达50位北极光追逐者一起乘坐舒适的大巴。同样的专业导游，同样的热情，同样的使命 — 找到极光。">A great-value group adventure. Join up to 50 fellow aurora hunters on a comfortable coach. Same expert guides, same passion, same mission — find the lights.</p>
-            <ul class="tour-includes">
-              <li data-en="✓ Up to 50 guests — meet fellow travellers" data-zh="✓ 最多50位客人 — 结识旅伴">✓ Up to 50 guests — meet fellow travellers</li>
-              <li data-en="✓ Full thermal suit included" data-zh="✓ 包括全套保暖服">✓ Full thermal suit included</li>
-              <li data-en="✓ Hot drinks & Norwegian snacks" data-zh="✓ 热饮和挪威小吃">✓ Hot drinks & Norwegian snacks</li>
-              <li data-en="✓ Free professional photos" data-zh="✓ 免费专业照片">✓ Free professional photos</li>
-              <li data-en="✓ 5–9 hours aurora hunt" data-zh="✓ 5–9小时北极光追逐">✓ 5–9 hours aurora hunt</li>
-            </ul>
-            <div class="tour-footer">
-              <div class="tour-price">
-                <span class="price-amount">1,200 kr</span>
-                <span class="price-per" data-en="per person" data-zh="每人">per person</span>
-              </div>
-              <a href="#booking" class="btn-book btn-book-alt" data-en="Book now →" data-zh="立即预订 →">Book now →</a>
-            </div>
-          </div>
-        </div>
-      </div>
+/* === TOURS === */
+.tours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+.tour-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+.tour-card.featured { border: 2px solid #1db87a; }
+.tour-img-wrap { position: relative; height: 200px; overflow: hidden; }
+.tour-photo { width: 100%; height: 100%; object-fit: cover; }
+.tour-img-fallback { display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 56px; }
+.vip-fallback { background: linear-gradient(135deg,#060e0a,#1db87a); }
+.bus-fallback { background: linear-gradient(135deg,#1a1a2e,#4a4aaa); }
+.tour-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; }
+.badge-vip { background: #0a3d22; color: #a8ffd8; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.badge-hot { background: #c8102e; color: #fff; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.badge-group { background: rgba(0,0,0,0.55); color: #fff; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.tour-body { padding: 20px; }
+.tour-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.tour-desc { color: #555; font-size: 14px; margin-bottom: 14px; line-height: 1.6; }
+.tour-includes { list-style: none; margin-bottom: 20px; }
+.tour-includes li { font-size: 13px; color: #333; padding: 4px 0; border-bottom: 0.5px solid #f0f0f0; }
+.tour-footer { display: flex; justify-content: space-between; align-items: center; }
+.price-amount { font-size: 24px; font-weight: 700; color: #0a6e45; }
+.price-per { font-size: 12px; color: #888; margin-left: 4px; }
+.btn-book { background: #0a3d22; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: background 0.2s; }
+.btn-book:hover { background: #1db87a; }
+.btn-book-alt { background: #1a1a2e; }
+.btn-book-alt:hover { background: #4a4aaa; }
 
-      <div class="usps">
-        <div class="usp"><div class="usp-icon">🎯</div><div class="usp-title" data-en="97.54% success rate" data-zh="97.54%成功率">97.54% success rate</div><div class="usp-desc" data-en="Verified over 3 years — we chase clear skies even across the Finnish border" data-zh="3年验证 — 我们追逐晴空甚至越过芬兰边境">Verified over 3 years — we chase clear skies even across the Finnish border</div></div>
-        <div class="usp"><div class="usp-icon">📸</div><div class="usp-title" data-en="Free pro photos" data-zh="免费专业照片">Free pro photos</div><div class="usp-desc" data-en="High-res aurora shots sent the morning after" data-zh="高分辨率极光照片在第二天早上发送">High-res aurora shots sent the morning after</div></div>
-        <div class="usp"><div class="usp-icon">🧥</div><div class="usp-title" data-en="Full thermal suits" data-zh="全套保暖服">Full thermal suits</div><div class="usp-desc" data-en="Arctic-grade thermal suits provided — stay warm all night long" data-zh="提供北极级保暖服 — 整夜保持温暖">Arctic-grade thermal suits provided — stay warm all night long</div></div>
-        <div class="usp"><div class="usp-icon">🔄</div><div class="usp-title" data-en="Free rebooking" data-zh="免费改期">Free rebooking</div><div class="usp-desc" data-en="Didn't see the lights? Rebook for free next night" data-zh="没看到极光？下次可免费改期">Didn't see the lights? Rebook for free next night</div></div>
-      </div>
-    </div>
-  </section>
+/* === USPs === */
+.usps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.usp { text-align: center; padding: 24px 16px; background: #fff; border-radius: 12px; border: 1px solid #eee; }
+.usp-icon { font-size: 28px; margin-bottom: 10px; }
+.usp-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.usp-desc { font-size: 12px; color: #666; line-height: 1.5; }
 
-  <!-- GUIDES -->
-  <section class="section" id="guides">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-en="Meet your guides" data-zh="认识您的导游">Meet your guides</h2>
-        <p data-en="Three locals. Three personalities. One shared obsession — the northern lights." data-zh="三位当地人。三种个性。一个共同的痴迷 — 北极光。">Three locals. Three personalities. One shared obsession — the northern lights.</p>
-      </div>
-      <div class="guides-grid">
+/* === GUIDES === */
+.guides-grid { display: flex; flex-direction: column; gap: 24px; }
+.guide-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+.guide-color-bar { height: 4px; }
+.guide-inner { padding: 24px; }
+.guide-top { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.guide-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.guide-avatar { width: 64px; height: 64px; border-radius: 50%; display: none; align-items: center; justify-content: center; color: #fff; font-size: 22px; font-weight: 700; flex-shrink: 0; }
+.guide-info { flex: 1; }
+.guide-name-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.guide-name { font-size: 20px; font-weight: 700; }
+.guide-pill { font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.guide-role { font-size: 13px; color: #666; margin-bottom: 8px; }
+.guide-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.gtag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+.guide-quote { border-left: 3px solid; padding: 12px 16px; border-radius: 0 10px 10px 0; margin-bottom: 12px; background: #f9f9f9; }
+.guide-quote p { font-size: 14px; color: #444; line-height: 1.7; font-style: italic; }
+.guide-review-tag { font-size: 12px; color: #888; background: #f5f5f5; border-radius: 8px; padding: 8px 12px; }
 
-        <div class="guide-card">
-          <div class="guide-color-bar" style="background:linear-gradient(90deg,#c8102e,#ff6b6b)"></div>
-          <div class="guide-inner">
-            <div class="guide-top">
-              <img src="images/kamil.jpg" alt="Kamil" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-              <div class="guide-avatar" style="background:linear-gradient(135deg,#c8102e,#7a0a1e)">K</div>
-              <div class="guide-info">
-                <div class="guide-name-row">
-                  <span class="guide-name">Kamil</span>
-                  <span class="guide-pill" style="background:#ffeaea;color:#c8102e" data-en="Experience guide & lead guide" data-zh="资深导游兼主导游">Experience guide & lead guide</span>
-                </div>
-                <div class="guide-role" data-en="Aurora Seeker · Senior expedition specialist" data-zh="极光追逐者 · 高级探险专家">Aurora Seeker · Senior expedition specialist</div>
-                <div class="guide-tags">
-                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Aurora Seeker" data-zh="极光追逐者">Aurora Seeker</span>
-                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Finland chaser" data-zh="芬兰追逐者">Finland chaser</span>
-                  <span class="gtag" style="background:#ffeaea;color:#c8102e" data-en="Photography" data-zh="摄影">Photography</span>
-                </div>
-              </div>
-            </div>
-            <blockquote class="guide-quote" style="border-color:#c8102e">
-              <p data-en='"I have been hunting the aurora my entire life — and I mean hunting. I don't sit and wait. I track solar activity, study cloud patterns, and when needed I will drive across the border into Finland without hesitation. Every guest who steps into my bus will see the northern lights. That is not a promise — it is who I am."' data-zh='"我用我的一生追逐北极光。我不会坐等极光出现。我追踪太阳活动，研究云层，必要时我会毫不犹豫地开车越过芬兰边境。踏上我大巴的每一位客人都会看到北极光。这不是承诺 — 这就是我。"'>"I have been hunting the aurora my entire life — and I mean hunting. I don't sit and wait. I track solar activity, study cloud patterns, and when needed I will drive across the border into Finland without hesitation. Every guest who steps into my bus will see the northern lights. That is not a promise — it is who I am."</p>
-            </blockquote>
-            <div class="guide-review-tag" data-en='Guests say: "Kamil made every second exciting — drove to Finland and found the dancing lights!"' data-zh='客人说："卡米尔让每一秒都令人兴奋 — 他开车去芬兰找到了舞动的极光！"'>Guests say: "Kamil made every second exciting — drove to Finland and found the dancing lights!"</div>
-          </div>
-        </div>
+/* === REVIEWS === */
+.reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+.review-card { background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 20px; }
+.review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.reviewer-name { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.reviewer-src { font-size: 11px; color: rgba(255,255,255,0.45); }
+.rev-stars { color: #f5c842; font-size: 13px; }
+.review-text { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 12px; font-style: italic; }
+.rev-badge { background: rgba(29,184,122,0.2); color: #1db87a; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.reviews-cta { text-align: center; }
+.btn-reviews { display: inline-block; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 12px 28px; border-radius: 10px; font-size: 14px; transition: background 0.2s; }
+.btn-reviews:hover { background: rgba(255,255,255,0.18); }
 
-        <div class="guide-card">
-          <div class="guide-color-bar" style="background:linear-gradient(90deg,#1db87a,#00d4a0)"></div>
-          <div class="guide-inner">
-            <div class="guide-top">
-              <img src="images/hassan.jpg" alt="Hassan" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-              <div class="guide-avatar" style="background:linear-gradient(135deg,#1db87a,#0a3d22)">H</div>
-              <div class="guide-info">
-                <div class="guide-name-row">
-                  <span class="guide-name">Hassan</span>
-                  <span class="guide-pill" style="background:#e1f5ee;color:#0a6e45" data-en="Local guide & lead guide" data-zh="本地导游兼主导游">Local guide & lead guide</span>
-                </div>
-                <div class="guide-role" data-en="Tromsø local · RedNote specialist · 🇨🇳 中文友好" data-zh="特罗姆瑟本地人 · 小红书专家 · 🇨🇳 中文友好">Tromsø local · RedNote specialist · 🇨🇳 中文友好</div>
-                <div class="guide-tags">
-                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45" data-en="Tromsø local" data-zh="特罗姆瑟本地人">Tromsø local</span>
-                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45">🇨🇳 中文友好</span>
-                  <span class="gtag" style="background:#e1f5ee;color:#0a6e45" data-en="RedNote partner" data-zh="小红书合作伙伴">RedNote partner</span>
-                </div>
-              </div>
-            </div>
-            <blockquote class="guide-quote" style="border-color:#1db87a">
-              <p data-en='"I grew up with these mountains, these fjords, these skies. The aurora is not just a light show to me — it is home. I once stayed out until 2am in overcast weather because I refused to give up on a group who had flown all the way from Australia. We found the lights. I always find the lights. That is my promise to you."' data-zh='"我在这些山脉、峡湾和天空下长大。北极光对我来说不仅仅是灯光表演 — 它是家。有一次，我在阴天坚持到凌晨2点，因为我不愿放弃一个从澳大利亚飞来的团队。我们找到了极光。我总能找到极光。这是我对你的承诺。"'>"I grew up with these mountains, these fjords, these skies. The aurora is not just a light show to me — it is home. I once stayed out until 2am in overcast weather because I refused to give up on a group who had flown all the way from Australia. We found the lights. I always find the lights. That is my promise to you."</p>
-            </blockquote>
-            <div class="guide-review-tag" data-en='Guests say: "Hassan stayed on the phone until 2am — we were the ONLY group out that late. THANK YOU!"' data-zh='客人说："哈桑一直打电话到凌晨2点 — 我们是唯一在那么晚还在外面的团队。非常感谢！"'>Guests say: "Hassan stayed on the phone until 2am — we were the ONLY group out that late. THANK YOU!"</div>
-          </div>
-        </div>
+/* === BOOKING === */
+.booking-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.booking-card { background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 24px 20px; text-align: center; }
+.booking-card.booking-featured { border: 2px solid #1db87a; }
+.booking-card.rn-card { background: #fff5f5; border-color: #c8102e; }
+.booking-icon { font-size: 32px; margin-bottom: 12px; }
+.booking-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.booking-card p { font-size: 13px; color: #666; margin-bottom: 16px; line-height: 1.5; }
+.btn-outline-dark { display: inline-block; border: 1.5px solid #0a3d22; color: #0a3d22; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: all 0.2s; }
+.btn-outline-dark:hover { background: #0a3d22; color: #fff; }
+.mini-code { background: #c8102e; color: #fff; font-size: 16px; font-weight: 700; letter-spacing: 2px; padding: 8px 16px; border-radius: 8px; display: inline-block; margin-top: 4px; }
 
-        <div class="guide-card">
-          <div class="guide-color-bar" style="background:linear-gradient(90deg,#4a7aff,#1a3a6e)"></div>
-          <div class="guide-inner">
-            <div class="guide-top">
-              <img src="images/marius.jpg" alt="Marius" class="guide-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-              <div class="guide-avatar" style="background:linear-gradient(135deg,#4a7aff,#1a2a6e)">M</div>
-              <div class="guide-info">
-                <div class="guide-name-row">
-                  <span class="guide-name">Marius</span>
-                  <span class="guide-pill" style="background:#e3eeff;color:#1a3a6e" data-en="Founder & lead guide" data-zh="创始人兼主导游">Founder & lead guide</span>
-                </div>
-                <div class="guide-role" data-en="Snow Travels founder · Arctic expedition veteran" data-zh="Snow Travels创始人 · 北极探险老将">Snow Travels founder · Arctic expedition veteran</div>
-                <div class="guide-tags">
-                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Founder" data-zh="创始人">Founder</span>
-                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Arctic expert" data-zh="北极专家">Arctic expert</span>
-                  <span class="gtag" style="background:#e3eeff;color:#1a3a6e" data-en="Decades of experience" data-zh="数十年经验">Decades of experience</span>
-                </div>
-              </div>
-            </div>
-            <blockquote class="guide-quote" style="border-color:#4a7aff">
-              <p data-en='"I built Snow Travels from nothing because I believe this region is the most magical place on Earth — and everyone deserves to experience it properly. I have spent decades learning these mountains, predicting this weather, reading this sky. When you travel with me, you are not a tourist. You are a guest in my home."' data-zh='"我从零开始创建了Snow Travels，因为我相信这个地区是地球上最神奇的地方，每个人都值得好好体验它。我花了几十年学习这些山脉，预测天气，解读天空。当你和我一起旅行时，你不是游客。你是我家的客人。"'>"I built Snow Travels from nothing because I believe this region is the most magical place on Earth — and everyone deserves to experience it properly. I have spent decades learning these mountains, predicting this weather, reading this sky. When you travel with me, you are not a tourist. You are a guest in my home."</p>
-            </blockquote>
-            <div class="guide-review-tag" data-en='Guests say: "Marius's honesty, integrity and experience is absolutely unmatched in all of Tromsø."' data-zh='客人说："马里乌斯的诚实、正直和经验在整个特罗姆瑟是无与伦比的。"'>Guests say: "Marius's honesty, integrity and experience is absolutely unmatched in all of Tromsø."</div>
-          </div>
-        </div>
+/* === FOOTER === */
+.footer { background: #0a1a12; padding: 60px 24px 30px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-logo { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.footer-desc { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.7; }
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col-title { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.footer-col a { color: rgba(255,255,255,0.5); font-size: 13px; transition: color 0.2s; }
+.footer-col a:hover { color: #1db87a; }
+.footer-bottom { border-top: 0.5px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-bottom span { color: rgba(255,255,255,0.35); font-size: 12px; }
 
-      </div>
-    </div>
-  </section>
+/* === AI CHAT === */
+.chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
+.chat-toggle { display: flex; align-items: center; gap: 8px; background: #0a3d22; color: #fff; border: none; border-radius: 30px; padding: 12px 20px; font-size: 14px; font-weight: 500; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.2s; }
+.chat-toggle:hover { transform: scale(1.04); }
+.chat-box { display: none; position: absolute; bottom: 60px; right: 0; width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); border: 1px solid #eee; overflow: hidden; }
+.chat-box.open { display: block; }
+.chat-header { background: #0a1a12; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+.chat-header-left { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 11px; }
+.chat-dot { width: 7px; height: 7px; background: #1db87a; border-radius: 50%; }
+.chat-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 16px; }
+.chat-messages { padding: 16px; min-height: 120px; max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.chat-msg { font-size: 13px; padding: 10px 13px; border-radius: 12px; max-width: 90%; line-height: 1.5; }
+.chat-msg.bot { background: #0a3d22; color: #fff; border-radius: 12px 12px 12px 2px; }
+.chat-msg.user { background: #f0f0f0; color: #1a1a1a; border-radius: 12px 12px 2px 12px; align-self: flex-end; }
+.chat-msg.loading { color: #888; font-style: italic; }
+.chat-input-row { display: flex; border-top: 1px solid #eee; }
+.chat-input-row input { flex: 1; border: none; padding: 12px 14px; font-size: 13px; outline: none; }
+.chat-send { background: #0a3d22; color: #fff; border: none; padding: 12px 16px; cursor: pointer; font-size: 16px; transition: background 0.2s; }
+.chat-send:hover { background: #1db87a; }
 
-  <!-- REVIEWS -->
-  <section class="section bg-dark" id="reviews">
-    <div class="container">
-      <div class="section-header light">
-        <h2 data-en="What guests say" data-zh="客人怎么说">What guests say</h2>
-        <p data-en="4.9 stars · 1,780+ verified reviews on GetYourGuide" data-zh="4.9颗星 · GetYourGuide上1,780+条认证评价">4.9 stars · 1,780+ verified reviews on GetYourGuide</p>
-        <div class="stars-big">★★★★★</div>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-top">
-            <div><div class="reviewer-name">Group from Australia 🇦🇺</div><div class="reviewer-src">Verified · GetYourGuide</div></div>
-            <div class="rev-stars">★★★★★</div>
-          </div>
-          <p class="review-text" data-en='"Hassan was on the phone constantly checking weather openings and worked really hard to find a clearing in the clouds. We were the only group out so late. Thank you to Marius and Hassan for your honesty and integrity. I would not recommend anyone else in Tromsø."' data-zh='"哈桑不断打电话检查天气，非常努力地寻找云层中的空隙。我们是唯一在那么晚还在外面的团队。感谢马里乌斯和哈桑的诚实和正直。"'>"Hassan was on the phone constantly checking weather openings and worked really hard to find a clearing in the clouds. We were the only group out so late. Thank you to Marius and Hassan for your honesty and integrity. I would not recommend anyone else in Tromsø."</p>
-          <span class="rev-badge" data-en="Hassan mentioned" data-zh="提到哈桑">Hassan mentioned</span>
-        </div>
-        <div class="review-card">
-          <div class="review-top">
-            <div><div class="reviewer-name">Erik K. 🇩🇪</div><div class="reviewer-src">Verified · Tripadvisor</div></div>
-            <div class="rev-stars">★★★★★</div>
-          </div>
-          <p class="review-text" data-en='"Hassan said he himself had not seen the lights this beautiful in a long time. Both owners can be trusted unconditionally — they do this not just as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."' data-zh='"哈桑说他自己很久没见过这么美的极光了。两位主人都可以无条件信任 — 他们不仅仅是把这当作工作，而是以极大的热情和激情在做这件事。我可以毫无保留地推荐Snow Travels。"'>"Hassan said he himself had not seen the lights this beautiful in a long time. Both owners can be trusted unconditionally — they do this not just as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."</p>
-          <span class="rev-badge" data-en="Hassan mentioned" data-zh="提到哈桑">Hassan mentioned</span>
-        </div>
-        <div class="review-card">
-          <div class="review-top">
-            <div><div class="reviewer-name">Sudha · India 🇮🇳</div><div class="reviewer-src">Verified · GetYourGuide · Nov 2025</div></div>
-            <div class="rev-stars">★★★★★</div>
-          </div>
-          <p class="review-text" data-en='"Absolutely stunning experience with an amazing tour guide. Just completed my dream bucket list. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down for us."' data-zh='"有一位令人惊叹的导游，体验绝对令人惊叹。刚刚完成了我梦想中的愿望清单。我们的导游开车去了芬兰，在我们回家的路上看到了舞动的极光。"'>"Absolutely stunning experience with an amazing tour guide. Just completed my dream bucket list. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down for us."</p>
-          <span class="rev-badge" data-en="Kamil mentioned" data-zh="提到卡米尔">Kamil mentioned</span>
-        </div>
-        <div class="review-card">
-          <div class="review-top">
-            <div><div class="reviewer-name">Traveller from UK 🇬🇧</div><div class="reviewer-src">Verified · Tripadvisor</div></div>
-            <div class="rev-stars">★★★★★</div>
-          </div>
-          <p class="review-text" data-en='"We were NEVER rushed and had the most perfect time. Marius has so much experience that everyone on our tour left buzzing. Even if you are not lucky enough to see the lights you will still have the most amazing time — his determination to make customers happy is extraordinary."' data-zh='"我们从未被催促，度过了最完美的时光。马里乌斯经验丰富，我们团队中的每个人都兴奋地离开了。即使你没有幸运地看到极光，你仍然会度过最美好的时光。"'>"We were NEVER rushed and had the most perfect time. Marius has so much experience that everyone on our tour left buzzing. Even if you are not lucky enough to see the lights you will still have the most amazing time — his determination to make customers happy is extraordinary."</p>
-          <span class="rev-badge" data-en="Marius mentioned" data-zh="提到马里乌斯">Marius mentioned</span>
-        </div>
-      </div>
-      <div class="reviews-cta">
-        <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="btn-reviews" data-en="Read all 1,780+ reviews on GetYourGuide →" data-zh="在GetYourGuide上阅读全部1,780+条评价 →">Read all 1,780+ reviews on GetYourGuide →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section class="section bg-light" id="booking">
-    <div class="container">
-      <div class="section-header">
-        <h2 data-en="Book your tour" data-zh="预订您的旅游">Book your tour</h2>
-        <p data-en="Choose how you'd like to book — direct or through a trusted platform" data-zh="选择您喜欢的预订方式">Choose how you'd like to book — direct or through a trusted platform</p>
-      </div>
-      <div class="booking-grid">
-        <div class="booking-card booking-featured">
-          <div class="booking-icon">🎟️</div>
-          <h3 data-en="Book direct" data-zh="直接预订">Book direct</h3>
-          <p data-en="Contact us directly for the best availability and personal service." data-zh="直接联系我们获得最佳可用性和个人服务。">Contact us directly for the best availability and personal service.</p>
-          <a href="mailto:info@snow-travels.com" class="btn-primary" data-en="Email us →" data-zh="发邮件给我们 →">Email us →</a>
-        </div>
-        <div class="booking-card">
-          <div class="booking-icon">🌍</div>
-          <h3>GetYourGuide</h3>
-          <p data-en="Rated #1 in Tromsø. 1,780+ verified reviews." data-zh="特罗姆瑟排名第一。1,780+条认证评价。">Rated #1 in Tromsø. 1,780+ verified reviews.</p>
-          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="btn-outline-dark" data-en="Book on GYG →" data-zh="在GYG上预订 →">Book on GYG →</a>
-        </div>
-        <div class="booking-card">
-          <div class="booking-icon">✈️</div>
-          <h3>Viator</h3>
-          <p data-en="Top rated on Viator. Likely to sell out — book early." data-zh="Viator顶级评分。可能售罄 — 提前预订。">Top rated on Viator. Likely to sell out — book early.</p>
-          <a href="https://www.viator.com" target="_blank" class="btn-outline-dark" data-en="Book on Viator →" data-zh="在Viator上预订 →">Book on Viator →</a>
-        </div>
-        <div class="booking-card rn-card">
-          <div class="booking-icon">🇨🇳</div>
-          <h3 data-en="Book via RedNote" data-zh="通过小红书预订">Book via RedNote</h3>
-          <p data-en="Most trusted RedNote partner in Tromsø. Use code for 10% off and share!" data-zh="小红书最受信赖合作伙伴。使用代码享受九折优惠并分享！">Most trusted RedNote partner in Tromsø. Use code for 10% off and share!</p>
-          <div class="mini-code">REDNOTE10</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-logo">❄ snow-travels.com</div>
-          <p class="footer-desc" data-en="Tromsø's most passionate northern lights guides. Rated #1 on GetYourGuide. We chase the aurora — all the way to Finland if that's what it takes." data-zh="特罗姆瑟最热情的北极光导游。GetYourGuide排名第一。我们为您追逐极光 — 必要时甚至去芬兰。">Tromsø's most passionate northern lights guides. Rated #1 on GetYourGuide. We chase the aurora — all the way to Finland if that's what it takes.</p>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title" data-en="Tours" data-zh="旅游">Tours</div>
-          <a href="#tours" data-en="VIP Minibus Tour" data-zh="VIP迷你巴士游">VIP Minibus Tour</a>
-          <a href="#tours" data-en="Group Bus Tour" data-zh="团体巴士游">Group Bus Tour</a>
-          <a href="#booking" data-en="Book now" data-zh="立即预订">Book now</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title" data-en="Book via" data-zh="预订方式">Book via</div>
-          <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a>
-          <a href="https://www.viator.com" target="_blank">Viator</a>
-          <a href="#rednote" data-en="RedNote (10% off)" data-zh="小红书（九折）">RedNote (10% off)</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title" data-en="Contact" data-zh="联系">Contact</div>
-          <a href="mailto:info@snow-travels.com">info@snow-travels.com</a>
-          <a href="#guides" data-en="Meet the guides" data-zh="认识导游">Meet the guides</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2025 Snow Travels AS · Tromsø, Norway</span>
-        <span data-en="The most passionate aurora guides in the Arctic" data-zh="北极最热情的极光导游">The most passionate aurora guides in the Arctic</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- AI CHAT -->
-  <div class="chat-widget" id="chatWidget">
-    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">
-      <span>💬</span>
-      <span data-en="Ask us anything" data-zh="随时提问">Ask us anything</span>
-    </button>
-    <div class="chat-box" id="chatBox">
-      <div class="chat-header">
-        <div class="chat-header-left"><div class="chat-dot"></div><span data-en="Snow Travels AI · Online · EN & 中文" data-zh="Snow Travels AI · 在线 · 中文 & EN">Snow Travels AI · Online · EN & 中文</span></div>
-        <button onclick="toggleChat()" class="chat-close">✕</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg bot" data-en="Hi! Ask me about tours, pricing, best dates to see the aurora, what to wear — or how to get 10% off with REDNOTE10! 🌌" data-zh="你好！问我关于旅游、价格、看极光的最佳日期、穿什么 — 或者如何用REDNOTE10享受九折优惠！🌌">Hi! Ask me about tours, pricing, best dates to see the aurora, what to wear — or how to get 10% off with REDNOTE10! 🌌</div>
-      </div>
-      <div class="chat-input-row">
-        <input type="text" id="chatInput" placeholder="Ask anything... / 用中文提问" onkeydown="if(event.key==='Enter')sendChat()" />
-        <button onclick="sendChat()" class="chat-send">→</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .tours-grid { grid-template-columns: 1fr; }
+  .usps { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .booking-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-stats { flex-direction: column; gap: 12px; padding: 16px; }
+  .hstat-divider { display: none; }
+  .usps { grid-template-columns: 1fr; }
+  .booking-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .rn-inner { flex-direction: column; }
+  .chat-box { width: 290px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
