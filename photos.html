@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos — Snow Travels Tromsø</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    .photos-hero {
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; align-items: flex-end; overflow: hidden;
+    }
+    .photos-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/aurora_red.jpg');
+      background-size: cover; background-position: center 60%;
+      animation: slowpan 22s ease-in-out infinite alternate;
+    }
+    @keyframes slowpan { from{transform:scale(1) translateX(0)} to{transform:scale(1.06) translateX(-2%)} }
+    .photos-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(4,8,10,0.1) 0%, rgba(4,8,10,0.05) 30%, rgba(4,8,10,0.6) 70%, rgba(4,8,10,0.95) 100%);
+    }
+    .photos-hero-content { position: relative; z-index: 2; padding: 0 60px 64px; max-width: 800px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(29,184,122,0.15); border: 0.5px solid rgba(29,184,122,0.35);
+      color: #a8ffd8; font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .photos-hero h1 {
+      font-family: 'Playfair Display', serif; color: #fff;
+      font-size: clamp(40px,7vw,80px); font-weight: 900;
+      line-height: 1.05; margin-bottom: 16px;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+    }
+    .photos-hero h1 em { color: #1db87a; font-style: normal; }
+    .photos-hero-sub { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.7; max-width: 500px; }
+    .hero-scroll {
+      position: absolute; bottom: 28px; right: 60px; z-index: 3;
+      color: rgba(255,255,255,0.3); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:.9} }
+
+    .gallery-section { background: #04080a; padding: 0; }
+    .row-split { display: grid; grid-template-columns: 1.4fr 1fr; height: 580px; gap: 3px; }
+    .row-three { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 420px; gap: 3px; margin-top: 3px; }
+    .row-wide { display: grid; grid-template-columns: 2fr 1fr; height: 500px; gap: 3px; margin-top: 3px; }
+
+    .gitem { position: relative; overflow: hidden; cursor: pointer; background: #0a1a12; }
+    .gitem img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); display: block; }
+    .gitem:hover img { transform: scale(1.07); }
+    .gitem-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,8,10,0) 40%, rgba(4,8,10,0.7) 100%); opacity: 0; transition: opacity 0.4s; }
+    .gitem:hover .gitem-overlay { opacity: 1; }
+    .gitem-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px; transform: translateY(8px); opacity: 0; transition: all 0.35s ease; }
+    .gitem:hover .gitem-info { transform: translateY(0); opacity: 1; }
+    .gitem-tag { display: inline-block; background: #1db87a; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 6px; }
+    .gitem-tag.rare { background: #c8102e; }
+    .gitem-title { font-family: 'Playfair Display', serif; color: #fff; font-size: 18px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+    .gitem-sub { color: rgba(255,255,255,0.6); font-size: 11px; }
+
+    .gitem-placeholder { position: relative; overflow: hidden; background: #0a1012; border: 1px dashed rgba(29,184,122,0.12); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+    .placeholder-icon { font-size: 32px; opacity: 0.2; margin-bottom: 10px; }
+    .placeholder-text { color: rgba(255,255,255,0.15); font-size: 11px; line-height: 1.6; }
+    .placeholder-text strong { color: rgba(255,255,255,0.25); display: block; margin-bottom: 4px; font-size: 13px; }
+
+    .caption-strip { background: #060c0a; border-top: 0.5px solid rgba(29,184,122,0.12); padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .cap-item { display: flex; align-items: center; gap: 8px; }
+    .cap-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .cap-label { color: rgba(255,255,255,0.35); font-size: 11px; }
+    .caption-right { color: rgba(255,255,255,0.2); font-size: 11px; font-style: italic; }
+
+    .book-cta { background: #0a1a12; padding: 80px 40px; text-align: center; }
+    .book-cta h2 { font-family: 'Playfair Display', serif; color: #fff; font-size: clamp(28px,4vw,44px); font-weight: 900; margin-bottom: 14px; }
+    .book-cta p { color: rgba(255,255,255,0.5); font-size: 15px; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .bcs { display: flex; justify-content: center; gap: 40px; margin-bottom: 36px; flex-wrap: wrap; }
+    .bcs-num { display: block; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #1db87a; }
+    .bcs-label { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(4,8,10,0.97); align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 84vh; object-fit: contain; border-radius: 4px; }
+    .lb-close { position: fixed; top: 20px; right: 24px; color: rgba(255,255,255,0.5); font-size: 28px; cursor: pointer; background: none; border: none; z-index: 10000; transition: color 0.2s; }
+    .lb-close:hover { color: #fff; }
+    .lb-caption { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.3); font-size: 11px; white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .photos-hero-content { padding: 0 24px 48px; }
+      .hero-scroll { display: none; }
+      .row-split { grid-template-columns: 1fr; height: auto; }
+      .row-split .gitem { height: 340px; }
+      .row-three { grid-template-columns: 1fr 1fr; height: auto; }
+      .row-three .gitem { height: 260px; }
+      .row-wide { grid-template-columns: 1fr; height: auto; }
+      .row-wide .gitem { height: 300px; }
+      .caption-strip { padding: 16px 20px; }
+      .book-cta { padding: 56px 24px; }
+    }
+    @media (max-width: 600px) {
+      .row-three { grid-template-columns: 1fr; }
+      .row-three .gitem { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-logo"><span class="snowflake">❄</span> Snow Travels</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="tours.html" class="nav-link">Tours</a>
+    <a href="booking.html" class="nav-link">Booking</a>
+    <a href="faq.html" class="nav-link">FAQ</a>
+    <a href="photos.html" class="nav-link active">Photos</a>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">中文</button>
+    <a href="booking.html" class="nav-link nav-cta">Book now</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="tours.html" onclick="closeMobile()">Tours</a>
+  <a href="booking.html" onclick="closeMobile()">Booking</a>
+  <a href="faq.html" onclick="closeMobile()">FAQ</a>
+  <a href="photos.html" onclick="closeMobile()">Photos</a>
+  <a href="booking.html" onclick="closeMobile()" class="mobile-book">Book now →</a>
+</div>
+
+<div class="photos-hero">
+  <div class="photos-hero-bg"></div>
+  <div class="photos-hero-overlay"></div>
+  <div class="photos-hero-content">
+    <div class="hero-eyebrow">📸 Real photos · Real tours · Tromsø</div>
+    <h1>The lights<br>we've <em>chased</em></h1>
+    <p class="photos-hero-sub" data-en="Every shot taken by our guides on real tours — sent to every guest the morning after, free of charge. This is what you will experience." data-zh="每张照片都由我们的导游在真实旅游中拍摄 — 第二天早上免费发送给每位客人。这就是您将体验到的。">Every shot taken by our guides on real tours — sent to every guest the morning after, free of charge. This is what you will experience.</p>
+  </div>
+  <div class="hero-scroll">Scroll ↓</div>
+</div>
+
+<div class="gallery-section">
+
+  <div class="row-split">
+    <div class="gitem" onclick="lb('images/aurora_red_tall.jpg','Rare red aurora · Lyngen Alps, Tromsø')">
+      <img src="images/aurora_red_tall.jpg" alt="Rare red northern lights over Lyngen Alps" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag rare" data-en="Extremely rare" data-zh="极为罕见">Extremely rare</div>
+        <div class="gitem-title" data-en="Red aurora over Lyngen Alps" data-zh="林根阿尔卑斯山的红色极光">Red aurora over Lyngen Alps</div>
+        <div class="gitem-sub" data-en="A once-in-a-decade display" data-zh="十年一遇的奇观">A once-in-a-decade display</div>
+      </div>
+    </div>
+    <div class="gitem" onclick="lb('images/aurora_green_sq.jpg','Intense green aurora · Tromsø region')">
+      <img src="images/aurora_green_sq.jpg" alt="Intense green northern lights Tromsø" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag">Northern lights</div>
+        <div class="gitem-title" data-en="Green curtains dancing overhead" data-zh="绿色帷幕在头顶舞动">Green curtains dancing overhead</div>
+        <div class="gitem-sub" data-en="Intense aurora · Tromsø" data-zh="强烈极光 · 特罗姆瑟">Intense aurora · Tromsø</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-three">
+    <div class="gitem" onclick="lb('images/aurora_green.jpg','Green aurora panorama · Tromsø')">
+      <img src="images/aurora_green.jpg" alt="Green northern lights panorama" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag">Aurora</div>
+        <div class="gitem-title" data-en="Wide green panorama" data-zh="宽幅绿色全景">Wide green panorama</div>
+        <div class="gitem-sub" data-en="Snow · Bridge · Arctic sky" data-zh="雪 · 桥梁 · 北极天空">Snow · Bridge · Arctic sky</div>
+      </div>
+    </div>
+    <div class="gitem" onclick="lb('images/aurora_green_tall.jpg','Green aurora close-up · Tromsø')">
+      <img src="images/aurora_green_tall.jpg" alt="Green aurora curtain close up" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag">Close-up</div>
+        <div class="gitem-title" data-en="The curtain up close" data-zh="近距离的极光帷幕">The curtain up close</div>
+        <div class="gitem-sub" data-en="Full intensity aurora" data-zh="全强度极光">Full intensity aurora</div>
+      </div>
+    </div>
+    <div class="gitem" onclick="lb('images/thumb_red.jpg','Red aurora over mountains · Tromsø')">
+      <img src="images/thumb_red.jpg" alt="Red aurora mountain silhouette" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag rare">Red aurora</div>
+        <div class="gitem-title" data-en="Mountains on fire" data-zh="燃烧的群山">Mountains on fire</div>
+        <div class="gitem-sub" data-en="Lyngen Alps · Red display" data-zh="林根阿尔卑斯 · 红色极光">Lyngen Alps · Red display</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-wide">
+    <div class="gitem" onclick="lb('images/aurora_red_wide.jpg','Cinematic red aurora · Lyngen Alps · Tromsø')">
+      <img src="images/aurora_red_wide.jpg" alt="Cinematic wide red aurora Tromsø" />
+      <div class="gitem-overlay"></div>
+      <div class="gitem-info">
+        <div class="gitem-tag rare">Cinematic</div>
+        <div class="gitem-title" data-en="The red aurora in full glory" data-zh="红色极光的完整壮观">The red aurora in full glory</div>
+        <div class="gitem-sub" data-en="Rare high-altitude aurora · Lyngen Alps" data-zh="罕见高空极光 · 林根阿尔卑斯">Rare high-altitude aurora · Lyngen Alps</div>
+      </div>
+    </div>
+    <div class="gitem-placeholder">
+      <div class="placeholder-icon">📸</div>
+      <div class="placeholder-text">
+        <strong data-en="More photos coming soon" data-zh="更多照片即将推出">More photos coming soon</strong>
+        <span data-en="Every guest gets free pro aurora photos the morning after their tour." data-zh="每位客人在旅游后第二天早上都会收到免费专业极光照片。">Every guest gets free pro aurora photos the morning after their tour.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption-strip">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <div class="cap-item"><div class="cap-dot" style="background:#1db87a"></div><span class="cap-label" data-en="All photos taken by Snow Travels guides on real tours" data-zh="所有照片均由导游在真实旅游中拍摄">All photos taken by Snow Travels guides on real tours</span></div>
+      <div class="cap-item"><div class="cap-dot" style="background:#c8102e"></div><span class="cap-label" data-en="Red aurora is extremely rare — a once-in-a-decade event" data-zh="红色极光极为罕见 — 十年一遇">Red aurora is extremely rare — a once-in-a-decade event</span></div>
+    </div>
+    <div class="caption-right" data-en="Free professional photos with every tour" data-zh="每次旅游附送免费专业照片">Free professional photos with every tour</div>
+  </div>
+
+</div>
+
+<div class="book-cta">
+  <div class="section-label" data-en="See this for yourself" data-zh="亲眼目睹">See this for yourself</div>
+  <h2 data-en="These lights are waiting for you" data-zh="这些极光在等待着您">These lights are waiting for you</h2>
+  <p data-en="97.54% of our guests see the northern lights. Your guide takes the photos. You just look up and enjoy." data-zh="97.54%的客人看到了北极光。导游负责拍照。您只需抬头欣赏。">97.54% of our guests see the northern lights. Your guide takes the photos. You just look up and enjoy.</p>
+  <div class="bcs">
+    <div><span class="bcs-num">97.54%</span><span class="bcs-label" data-en="Success rate" data-zh="成功率">Success rate</span></div>
+    <div><span class="bcs-num">1,780+</span><span class="bcs-label" data-en="5-star reviews" data-zh="五星评价">5-star reviews</span></div>
+    <div><span class="bcs-num">Free</span><span class="bcs-label" data-en="Photos every tour" data-zh="每次旅游免费照片">Photos every tour</span></div>
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="booking.html" class="btn btn-green" data-en="Book your tour →" data-zh="预订旅游 →">Book your tour →</a>
+    <a href="tours.html" class="btn btn-ghost" data-en="Explore tours" data-zh="探索旅游">Explore tours</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="footer-logo"><span class="snowflake">❄</span> Snow Travels</div><p class="footer-desc">Tromsø's most passionate aurora guides.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Pages</div><a href="index.html">Home</a><a href="tours.html">Tours</a><a href="booking.html">Booking</a><a href="faq.html">FAQ</a><a href="photos.html">Photos</a></div>
+    <div class="footer-col"><div class="footer-col-title">Book via</div><a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a><a href="https://www.viator.com" target="_blank">Viator</a></div>
+    <div class="footer-col"><div class="footer-col-title">Follow us</div><a href="https://www.instagram.com/snowtravelstromso/" target="_blank">Instagram</a><a href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank">小红书</a><a href="mailto:info@snow-travels.com">Email us</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Snow Travels AS · Tromsø, Norway</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lbImg" src="" alt="" />
+  <div class="lb-caption" id="lbCap"></div>
+</div>
+
+<script>
+let currentLang='en';
+function toggleLang(){currentLang=currentLang==='en'?'zh':'en';document.getElementById('langBtn').textContent=currentLang==='en'?'中文':'EN';document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+currentLang);if(t)el.innerHTML=t;});}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);});
+function lb(src,cap){document.getElementById('lbImg').src=src;document.getElementById('lbCap').textContent=cap||'';document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';document.getElementById('lbImg').src='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+</body>
+</html>
