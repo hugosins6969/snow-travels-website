@@ -347,6 +347,44 @@ img{max-width:100%;display:block}
 .why-card-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px}
 .why-card-text{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7}
 
+/* ── GALLERY ── */
+.gallery-section{background:#060c08}
+.gallery-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:48px;flex-wrap:wrap;gap:16px;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,300px);
+  gap:12px;
+}
+.gallery-item{
+  position:relative;overflow:hidden;
+  background:#080f09;
+  cursor:zoom-in;
+  display:block;
+}
+.gallery-item img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transition:transform 0.7s ease, filter 0.3s ease;
+  filter:brightness(0.9);
+}
+.gallery-item:hover img{
+  transform:scale(1.04);
+  filter:brightness(1.05);
+}
+.gallery-item::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,12,8,0.25) 0%,transparent 40%);
+  pointer-events:none;
+  opacity:0;transition:opacity 0.3s;
+}
+.gallery-item:hover::after{opacity:1}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+
 /* ── REVIEWS ── */
 .reviews-section{background:#080f09}
 .reviews-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px}
@@ -844,6 +882,9 @@ img{max-width:100%;display:block}
   .includes-grid{grid-template-columns:1fr;gap:32px}
   .tour-main{grid-template-columns:1fr;gap:32px}
   .tour-main.reverse{direction:ltr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,260px)}
+  .g-tall{grid-row:span 2}
+  .g-wide{grid-column:span 2;grid-row:span 1}
   .day-tours-grid{grid-template-columns:1fr 1fr}
   .footer{padding:48px 32px 28px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
@@ -861,6 +902,10 @@ img{max-width:100%;display:block}
   .hstat:last-child{border-bottom:none;padding-bottom:0}
   .tours-row{grid-template-columns:1fr;gap:12px}
   .why-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,220px);gap:8px}
+  .g-tall{grid-row:span 1}
+  .g-wide{grid-column:span 1;grid-row:span 1}
+  .gallery-header{flex-direction:column;align-items:flex-start}
   .why-strip-inner{grid-template-columns:1fr}
   .reviews-grid{grid-template-columns:1fr}
   .day-tours-grid{grid-template-columns:1fr}
