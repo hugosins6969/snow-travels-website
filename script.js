@@ -1,41 +1,31 @@
-/* =====================================================
-   SNOW TRAVELS — SHARED SCRIPT
-   Brukes på alle sider
-   ===================================================== */
+# UI Kit — Snow Travels Website
 
-/* ── NAV: solid bakgrunn ved scroll ── */
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  if (nav) nav.classList.toggle('solid', window.scrollY > 40);
-});
+A clickable prototype of the full 3-page marketing website (**Home → Tours → Booking**). This is the canonical, living implementation of the design system: every pattern in `preview/` appears here in real context.
 
-/* ── MOBILMENY ── */
-function toggleMenu() {
-  const m = document.getElementById('mobileMenu');
-  if (m) m.classList.toggle('open');
-}
-function closeMobile() {
-  const m = document.getElementById('mobileMenu');
-  if (m) m.classList.remove('open');
-}
+## Structure
 
-/* ── SPRÅKBYTTER (EN / 中文) ── */
-let currentLang = 'en';
-function toggleLang() {
-  currentLang = currentLang === 'en' ? 'zh' : 'en';
-  const btn = document.getElementById('langBtn');
-  if (btn) btn.textContent = currentLang === 'en' ? '中文' : 'EN';
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const t = el.getAttribute('data-' + currentLang);
-    if (t) el.innerHTML = t;
-  });
-}
+```
+ui_kits/website/
+├── index.html        Home page — hero, tours row, why-strip, gallery, reviews, CTA
+├── tours.html        Tours listing with Minibus / Bus / Day tours tabs
+├── booking.html      Bokun-style calendar + booking panel
+├── shared.css        Single source of truth for tokens (931 lines)
+├── script.js         Nav scroll state · mobile menu · EN/中文 toggle · FAQ accordion
+└── images/           Aurora photo placeholders (replace with real photography)
+    ├── aurora-couple-green.jpg
+    ├── aurora-couple-purple.jpg
+    ├── aurora-corona.jpg
+    └── aurora-purple.jpg
+```
 
-/* ── FAQ ACCORDION (kun på faq.html) ── */
-function toggleFaq(qEl) {
-  const item = qEl.closest('.faq-item');
-  if (!item) return;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
+## How to browse
+
+Open `index.html`. The top nav wires through to `tours.html` and `booking.html`; click `中文` to toggle the whole site to Chinese; hover "Tours ▾" to see the dropdown menu with emoji category icons.
+
+## Notes on the implementation
+
+- `shared.css` is intentionally left verbatim from the Snow Travels repo — it's the system. Don't re-organize it; token values are referenced in a few places in prose.
+- The images in `images/` are real long-exposure aurora photography supplied by Snow Travels.
+- Third-party brand marks (GetYourGuide, Google, Tripadvisor) are rebuilt as inline SVG inside the page — no external logo files.
+- The hamburger / mobile menu works below 760px.
+- Booking calendar is driven by a small in-file JS date model; dates are color-coded by availability (`avail` / `few` / `full`) and clicking a day selects it.
