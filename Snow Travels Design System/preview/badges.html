@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:22px;color:#fff}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+  .b-green{background:#4ade80;color:#052010}
+  .b-white{background:rgba(255,255,255,0.95);color:#052010}
+  .b-red{background:#c8102e;color:#fff;letter-spacing:0}
+  .season{padding:4px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px}
+  .season-winter{background:rgba(74,222,128,0.2);color:#4ade80}
+  .season-all{background:rgba(255,255,255,0.15);color:#fff}
+  .cap{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:0.5px}
+  .cap-green{background:rgba(74,222,128,0.15);color:#4ade80}
+  .cap-yellow{background:rgba(251,191,36,0.15);color:#fbbf24}
+  .cap-red{background:rgba(239,68,68,0.15);color:#ef4444}
+  .eyebrow{color:#4ade80;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase}
+  .h{font-size:11px;color:rgba(255,255,255,0.35);margin:16px 0 8px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+</style></head><body>
+<div class="h">Photo badges</div>
+<div class="row">
+  <span class="badge b-green">Minibus · Max 15</span>
+  <span class="badge b-white">Bus · Max 50</span>
+  <span class="badge b-red">🔥 Bestseller</span>
+</div>
+<div class="h">Season tags</div>
+<div class="row">
+  <span class="season season-winter">Oct — Jan</span>
+  <span class="season season-winter">Nov — Apr</span>
+  <span class="season season-all">All year</span>
+</div>
+<div class="h">Availability</div>
+<div class="row">
+  <span class="cap cap-green">Available</span>
+  <span class="cap cap-yellow">Last spots</span>
+  <span class="cap cap-red">Fully booked</span>
+</div>
+<div class="h">Eyebrow label</div>
+<div class="row"><span class="eyebrow">Our signature experience</span></div>
+</body></html>

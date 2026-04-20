@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:22px;color:var(--fg)}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .st{padding:16px;border-radius:var(--r-4);border:0.5px solid var(--line-08);background:#080f09}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle}
+  .nm{font-size:12px;font-weight:600;color:var(--fg);margin-bottom:6px}
+  .hx{font-size:10px;color:var(--fg-4);font-variant-numeric:tabular-nums;letter-spacing:0.3px}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:0.5px;margin-top:10px}
+  .badge-green{background:rgba(74,222,128,0.15);color:#4ade80}
+  .badge-yellow{background:rgba(251,191,36,0.15);color:#fbbf24}
+  .badge-red{background:rgba(239,68,68,0.15);color:#ef4444}
+</style></head><body>
+<div class="grid">
+  <div class="st">
+    <div class="nm"><span class="dot" style="background:#4ade80"></span>Available</div>
+    <div class="hx">#4ade80 · status-avail</div>
+    <span class="badge badge-green">Available</span>
+  </div>
+  <div class="st">
+    <div class="nm"><span class="dot" style="background:#fbbf24"></span>Few spots</div>
+    <div class="hx">#fbbf24 · status-few</div>
+    <span class="badge badge-yellow">Last spots</span>
+  </div>
+  <div class="st">
+    <div class="nm"><span class="dot" style="background:#ef4444"></span>Full</div>
+    <div class="hx">#ef4444 · status-full</div>
+    <span class="badge badge-red">Fully booked</span>
+  </div>
+</div>
+</body></html>

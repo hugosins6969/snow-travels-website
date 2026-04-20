@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:#111;font-family:var(--font-body);padding:20px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .sw{aspect-ratio:4/3;border-radius:var(--r-4);padding:14px;display:flex;flex-direction:column;justify-content:space-between;border:0.5px solid var(--line-08)}
+  .sw .nm{font-size:11px;color:var(--fg);font-weight:500;letter-spacing:0.3px}
+  .sw .hex{font-size:10px;color:var(--fg-4);font-weight:500;font-variant-numeric:tabular-nums}
+  .sw .role{font-size:9px;color:var(--fg-5);letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
+</style></head><body>
+<div class="grid">
+  <div class="sw" style="background:#060c08"><span class="role">Page</span><span class="nm">BG</span><span class="hex">#060c08</span></div>
+  <div class="sw" style="background:#080f09"><span class="role">Raised</span><span class="nm">BG Raised</span><span class="hex">#080f09</span></div>
+  <div class="sw" style="background:#040a05"><span class="role">Footer</span><span class="nm">BG Deep</span><span class="hex">#040a05</span></div>
+  <div class="sw" style="background:#0a1a0c"><span class="role">Chat</span><span class="nm">BG Chat</span><span class="hex">#0a1a0c</span></div>
+</div>
+</body></html>

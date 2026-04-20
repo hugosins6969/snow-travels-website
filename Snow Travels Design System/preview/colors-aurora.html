@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);color:var(--fg);padding:20px}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .sw{aspect-ratio:1/1;border-radius:var(--r-4);position:relative;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;border:0.5px solid var(--line-08)}
+  .sw .hex{font-size:10px;color:var(--fg-4);letter-spacing:0.5px;font-weight:500}
+  .sw .nm{font-size:11px;color:var(--fg-1);font-weight:500;margin-top:2px}
+  .on-dark .nm{color:#fff}
+  .on-green .nm,.on-green .hex{color:var(--aurora-ink)}
+</style></head><body>
+<div class="grid">
+  <div class="sw on-green" style="background:#4ade80"><span class="nm">Aurora</span><span class="hex" style="color:#052010">#4ade80</span></div>
+  <div class="sw" style="background:#22c55e"><span class="nm">Hover</span><span class="hex" style="color:rgba(5,32,16,0.7)">#22c55e</span></div>
+  <div class="sw" style="background:#86efac"><span class="nm" style="color:#052010">Soft</span><span class="hex" style="color:rgba(5,32,16,0.7)">#86efac</span></div>
+  <div class="sw" style="background:#052010"><span class="nm">Aurora Ink</span><span class="hex">#052010</span></div>
+  <div class="sw" style="background:rgba(74,222,128,0.20);border-color:rgba(74,222,128,0.35)"><span class="nm">Tint 20</span><span class="hex">20%</span></div>
+  <div class="sw" style="background:rgba(74,222,128,0.12)"><span class="nm">Tint 12</span><span class="hex">12%</span></div>
+</div>
+</body></html>

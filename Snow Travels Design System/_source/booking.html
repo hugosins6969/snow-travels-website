@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Book a Tour — Snow Travels Tromsø</title>
+<meta name="description" content="Book your northern lights tour with Snow Travels — Tromsø's #1 rated company. 97.54% aurora success rate. Meet at Scandic Ishavshotel. Book direct."/>
+<link rel="stylesheet" href="shared.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">❄ Snow <span>Travels</span></div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link" data-en="Home" data-zh="主页">Home</a>
+    <div class="nav-dropdown">
+      <a href="tours.html" class="nav-link" data-en="Tours ▾" data-zh="旅游 ▾">Tours ▾</a>
+      <div class="dropdown-menu">
+        <a href="tours.html#minibus" class="dd-item featured">
+          <span class="dd-icon">🌌</span>
+          <div class="dd-text">
+            <div class="dd-title" data-en="Northern Lights Tours" data-zh="北极光旅游">Northern Lights Tours</div>
+            <div class="dd-desc" data-en="Minibus & bus · 5–9 hrs unlimited" data-zh="迷你巴士和巴士 · 5–9小时无限">Minibus &amp; bus · 5–9 hrs unlimited</div>
+          </div>
+        </a>
+        <a href="tours.html#day" class="dd-item">
+          <span class="dd-icon">☀️</span>
+          <div class="dd-text">
+            <div class="dd-title" data-en="Day Tours" data-zh="日间旅游">Day Tours</div>
+            <div class="dd-desc" data-en="Arctic daytime adventures" data-zh="北极日间冒险">Arctic daytime adventures</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <a href="booking.html" class="nav-link active" data-en="Booking" data-zh="预订">Booking</a>
+    <a href="faq.html" class="nav-link" data-en="FAQ" data-zh="常见问题">FAQ</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">中文</button>
+    <a href="booking.html" class="btn-book-nav" data-en="Book now" data-zh="立即预订">Book now</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="tours.html" onclick="closeMobile()">Tours</a>
+  <a href="booking.html" onclick="closeMobile()" style="color:#4ade80;font-weight:600;">Booking</a>
+  <a href="faq.html" onclick="closeMobile()">FAQ</a>
+  <a href="booking.html" onclick="closeMobile()" class="mobile-book">Book now →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/aurora-couple-purple.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="label" data-en="Reserve your spot" data-zh="预订您的位置">Reserve your spot</div>
+    <h1 data-en="Book your<br><strong>northern lights tour</strong>" data-zh="预订您的<br><strong>北极光旅游</strong>">Book your<br><strong>northern lights tour</strong></h1>
+    <p data-en="Choose a tour below and select your preferred booking platform. Free cancellation up to 24 hours before." data-zh="在下方选择旅游并选择您喜欢的预订平台。出发前24小时内可免费取消。">Choose a tour below and select your preferred booking platform. Free cancellation up to 24 hours before.</p>
+  </div>
+</div>
+
+<!-- WHY US STRIP -->
+<div class="why-strip">
+  <div class="why-strip-inner">
+    <div class="wsi">
+      <div class="wsi-num">97.54%</div>
+      <div class="wsi-title" data-en="Aurora success rate" data-zh="极光成功率">Aurora success rate</div>
+      <div class="wsi-text" data-en="Verified over 3 full seasons — the highest in Tromsø" data-zh="经过3个完整季节验证 — 特罗姆瑟最高">Verified over 3 full seasons — the highest in Tromsø</div>
+    </div>
+    <div class="wsi">
+      <div class="wsi-num">1,780<span style="font-size:24px">+</span></div>
+      <div class="wsi-title" data-en="Verified 5-star reviews" data-zh="认证五星评价">Verified 5-star reviews</div>
+      <div class="wsi-text" data-en="Rated #1 on GetYourGuide in Tromsø" data-zh="GetYourGuide特罗姆瑟排名第一">Rated #1 on GetYourGuide in Tromsø</div>
+    </div>
+    <div class="wsi">
+      <div class="wsi-num">5–9h</div>
+      <div class="wsi-title" data-en="No time limits" data-zh="无时间限制">No time limits</div>
+      <div class="wsi-text" data-en="We stay out as long as it takes. If the lights appear at 2am, we're still there." data-zh="我们坚守到成功为止。凌晨2点出现也在那里。">We stay out as long as it takes. If the lights appear at 2am, we're still there.</div>
+    </div>
+    <div class="wsi">
+      <div class="wsi-num">Live</div>
+      <div class="wsi-title" data-en="Sky cam tracking" data-zh="实时天空摄像头追踪">Sky cam tracking</div>
+      <div class="wsi-text" data-en="Live skycams across the coast, far south and deep into Finland — real weather, real decisions." data-zh="沿海、向南及深入芬兰的实时天空摄像头 — 真实天气，实时决策。">Live skycams across the coast, far south and deep into Finland — real weather, real decisions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CALENDAR BOOKING WIDGET -->
+<div class="bk-section" id="book">
+  <div class="bk-container">
+    <div class="label" data-en="Book direct — best price" data-zh="直接预订 — 最优价格">Book direct — best price</div>
+    <h2 class="booking-section-h" style="margin-bottom:32px" data-en="Choose a date &amp; <strong>tour</strong>" data-zh="选择日期和<strong>旅游</strong>">Choose a date &amp; <strong>tour</strong></h2>
+    <div class="tour-tabs">
+      <button class="ttab active" onclick="setTour('mini',this)" data-en="🌌 Minibus — 2,400 kr" data-zh="🌌 迷你巴士 — 2,400克朗">🌌 Minibus — 2,400 kr</button>
+      <button class="ttab" onclick="setTour('bus',this)" data-en="🚌 Bus — 1,200 kr" data-zh="🚌 巴士 — 1,200克朗">🚌 Bus — 1,200 kr</button>
+    </div>
+    <div class="bk-layout">
+      <div class="cal-wrap">
+        <div class="cal-nav">
+          <button class="cal-nav-btn" onclick="prevMonth()">&#8249;</button>
+          <div class="cal-month" id="calTitle"></div>
+          <button class="cal-nav-btn" onclick="nextMonth()">&#8250;</button>
+        </div>
+        <div class="cal-weekdays">
+          <div class="cal-wd">Mon</div><div class="cal-wd">Tue</div><div class="cal-wd">Wed</div>
+          <div class="cal-wd">Thu</div><div class="cal-wd">Fri</div><div class="cal-wd">Sat</div><div class="cal-wd">Sun</div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-legend">
+          <div class="cal-legend-item"><div class="leg-dot leg-green"></div><span data-en="Available" data-zh="有空位">Available</span></div>
+          <div class="cal-legend-item"><div class="leg-dot leg-yellow"></div><span data-en="Few spots" data-zh="仅剩少量">Few spots</span></div>
+          <div class="cal-legend-item"><div class="leg-dot leg-grey"></div><span data-en="Full" data-zh="已满">Full</span></div>
+        </div>
+      </div>
+      <div class="bk-panel">
+        <div class="bk-panel-tour">
+          <div class="bk-tour-img" id="tourThumb"></div>
+          <div>
+            <div class="bk-tour-name" id="tourName">Northern Lights<br>Minibus Tour</div>
+            <div class="bk-tour-sub" id="tourSub">Max 15 guests &middot; 2,400 kr/person</div>
+          </div>
+        </div>
+        <div id="panelEmpty" class="bk-empty">
+          <div class="bk-empty-icon">🌌</div>
+          <div class="bk-empty-text" data-en="Select a date on the calendar to see availability &amp; prices" data-zh="在日历上选择日期查看空位和价格">Select a date on the calendar to see availability &amp; prices</div>
+        </div>
+        <div id="panelBook" style="display:none">
+          <div class="bk-date-row">
+            <div>
+              <div class="bk-date-label" data-en="Selected date" data-zh="选定日期">Selected date</div>
+              <div class="bk-date-val" id="selDateDisp"></div>
+            </div>
+            <button class="bk-change" onclick="clearDate()" data-en="Change" data-zh="更改">Change</button>
+          </div>
+          <div class="cap-row">
+            <div class="cap-label-row">
+              <span class="cap-label" data-en="Availability" data-zh="空位">Availability</span>
+              <span class="cap-val" id="capText"></span>
+            </div>
+            <div class="cap-bar"><div class="cap-fill" id="capFill"></div></div>
+            <span class="cap-badge" id="capBadge"></span>
+          </div>
+          <div class="qty-row">
+            <div class="qty-label" data-en="Guests" data-zh="客人数">Guests</div>
+            <div class="qty-ctrl">
+              <button class="qty-btn" id="qtyMinus" onclick="changeQty(-1)">&#8722;</button>
+              <span class="qty-num" id="qtyDisp">1</span>
+              <button class="qty-btn" id="qtyPlus" onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div>
+              <div class="price-label" data-en="Total" data-zh="总价">Total</div>
+              <div class="price-per" id="pricePerLine"></div>
+            </div>
+            <div class="price-total"><span class="price-currency">kr</span><span id="totalPrice">2400</span></div>
+          </div>
+          <a class="stripe-btn" id="stripeBtn" href="#" target="_blank">
+            <span data-en="Pay with card →" data-zh="刷卡支付 →">Pay with card →</span>
+          </a>
+          <div class="stripe-note" data-en="Secure payment · Free cancellation 24h before · Best price direct" data-zh="安全支付 · 出发前24小时免费取消 · 直接预订最优价">Secure payment · Free cancellation 24h before · Best price direct</div>
+          <div class="also-book">
+            <div class="also-book-t" data-en="Also book via" data-zh="也可通过以下方式预订">Also book via</div>
+            <div class="also-book-links">
+              <a class="also-link" id="gygLink" href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a>
+              <a class="also-link" href="mailto:info@snow-travels.com">Email us</a>
+              <a class="also-link" href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank">RedNote 小红书</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<div class="includes-section">
+  <div class="includes-container">
+    <div class="label" data-en="What's included" data-zh="包含内容">What's included</div>
+    <h2 class="booking-section-h" data-en="Everything you need<br><strong>for the perfect night</strong>" data-zh="您所需要的一切<br><strong>完美夜晚</strong>">Everything you need<br><strong>for the perfect night</strong></h2>
+    <div class="includes-grid">
+      <div class="includes-col">
+        <h3 data-en="Minibus Tour — 2,400 kr" data-zh="迷你巴士游 — 2,400克朗">Minibus Tour — 2,400 kr</h3>
+        <div class="meta" data-en="Max 15 guests · 5–9 hours" data-zh="最多15位客人 · 5–9小时">Max 15 guests · 5–9 hours</div>
+        <ul class="includes-list">
+          <li><span data-en="Full Arctic thermal suit — keeps you warm to –20°C" data-zh="全套北极保暖服 — 保温至零下20摄氏度">Full Arctic thermal suit — keeps you warm to –20°C</span></li>
+          <li><span data-en="Hotdog or vegan option + warm drinks by bonfire" data-zh="篝火旁提供热狗或纯素选择及热饮">Hotdog or vegan option + warm drinks by bonfire</span></li>
+          <li><span data-en="Free professional aurora photos sent next morning" data-zh="免费专业极光照片于次日早晨发送">Free professional aurora photos sent next morning</span></li>
+          <li><span data-en="Tripods for your own camera and photography tips" data-zh="摄影三脚架和摄影技巧">Tripods for your own camera and photography tips</span></li>
+          <li><span data-en="Unlimited aurora hunt — no fixed end time" data-zh="无限极光追逐 — 无固定结束时间">Unlimited aurora hunt — no fixed end time</span></li>
+          <li><span data-en="Meet at Scandic Ishavshotel · Drop-off city centre" data-zh="在Scandic Ishavshotel集合 · 市中心送回">Meet at Scandic Ishavshotel · Drop-off city centre</span></li>
+          <li><span data-en="Live skycams along the entire coast, far south and deep into Finland" data-zh="沿海、向南及深入芬兰的全程实时天空摄像头">Live skycams along the entire coast, far south and deep into Finland</span></li>
+        </ul>
+      </div>
+      <div class="includes-col">
+        <h3 data-en="Bus Tour — 1,200 kr" data-zh="巴士游 — 1,200克朗">Bus Tour — 1,200 kr</h3>
+        <div class="meta" data-en="Max 50 guests · 5–9 hours" data-zh="最多50位客人 · 5–9小时">Max 50 guests · 5–9 hours</div>
+        <ul class="includes-list">
+          <li><span data-en="Full Arctic thermal suit — keeps you warm to –20°C" data-zh="全套北极保暖服 — 保温至零下20摄氏度">Full Arctic thermal suit — keeps you warm to –20°C</span></li>
+          <li><span data-en="Warm drinks and traditional Norwegian snacks" data-zh="热饮和传统挪威小吃">Warm drinks and traditional Norwegian snacks</span></li>
+          <li><span data-en="Free professional aurora photos sent next morning" data-zh="免费专业极光照片于次日早晨发送">Free professional aurora photos sent next morning</span></li>
+          <li><span data-en="Expert local guide with real-time aurora tracking" data-zh="具备实时极光追踪技术的专业本地导游">Expert local guide with real-time aurora tracking</span></li>
+          <li><span data-en="5–9 hour aurora hunt across the region" data-zh="5–9小时区域性极光追逐">5–9 hour aurora hunt across the region</span></li>
+          <li><span data-en="Meet at Scandic Ishavshotel · Drop-off city centre" data-zh="在Scandic Ishavshotel集合 · 市中心送回">Meet at Scandic Ishavshotel · Drop-off city centre</span></li>
+          <li><span data-en="Live skycams along the entire coast, far south and deep into Finland" data-zh="沿海、向南及深入芬兰的全程实时天空摄像头">Live skycams along the entire coast, far south and deep into Finland</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST + REVIEWS -->
+<div class="trust-section">
+  <div class="trust-container">
+    <div class="trust-grid">
+      <div class="trust-left">
+        <div class="label" data-en="Why choose us" data-zh="为什么选择我们">Why choose us</div>
+        <h2 data-en="Tromsø's most<br><strong>trusted aurora guides</strong>" data-zh="特罗姆瑟最受信赖的<br><strong>极光导游</strong>">Tromsø's most<br><strong>trusted aurora guides</strong></h2>
+        <p data-en="Snow Travels is rated #1 on GetYourGuide in Tromsø with over 1,780 verified five-star reviews. Our 97.54% aurora success rate — verified across three full seasons — is among the highest of any tour operator in the region. We achieve this through live skycam monitoring across the entire coastline, far south and deep into Finland, giving us real-time weather data that most operators simply do not have." data-zh="Snow Travels在特罗姆瑟GetYourGuide上排名第一，拥有超过1,780条认证五星评价。我们经过三个完整赛季验证的97.54%极光成功率是该地区最高的之一。">Snow Travels is rated #1 on GetYourGuide in Tromsø with over 1,780 verified five-star reviews. Our 97.54% aurora success rate — verified across three full seasons — is among the highest of any tour operator in the region. We achieve this through live skycam monitoring across the entire coastline, far south and deep into Finland, giving us real-time weather data that most operators simply do not have.</p>
+        <div class="trust-stats">
+          <div class="tstat">
+            <div class="tstat-n">4.9★</div>
+            <div class="tstat-l" data-en="Avg. GYG rating" data-zh="GYG平均评分">Avg. GYG rating</div>
+          </div>
+          <div class="tstat">
+            <div class="tstat-n">#1</div>
+            <div class="tstat-l" data-en="Tromsø on GYG" data-zh="GYG特罗姆瑟">Tromsø on GYG</div>
+          </div>
+          <div class="tstat">
+            <div class="tstat-n">3+</div>
+            <div class="tstat-l" data-en="Seasons verified" data-zh="验证季节数">Seasons verified</div>
+          </div>
+        </div>
+        <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank" class="btn-secondary" data-en="Read all 1,780+ reviews on GYG →" data-zh="在GYG上阅读全部1,780+条评价 →">Read all 1,780+ reviews on GYG →</a>
+      </div>
+      <div class="trust-right">
+        <div class="review-stack">
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <div class="review-item-text" data-en='"Hassan was on the phone constantly checking weather openings, working really hard to find a clearing in the clouds. We were the only group out so late. Thank you for your honesty and integrity."' data-zh='"哈桑不断打电话检查天气，非常努力地寻找云层中的空隙。我们是唯一在那么晚还在外面的团队。"'>"Hassan was on the phone constantly checking weather openings, working really hard to find a clearing in the clouds. We were the only group out so late. Thank you for your honesty and integrity."</div>
+            <div class="review-item-meta">
+              <span class="review-item-author">Group from Australia 🇦🇺 · GetYourGuide</span>
+              <span class="review-item-guide">Hassan mentioned</span>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <div class="review-item-text" data-en='"Absolutely stunning experience. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down. Just completed my dream bucket list."' data-zh='"体验绝对令人惊叹。我们的导游开车去了芬兰，在回家的路上我们看到了舞动的极光。刚刚完成了我的梦想愿望清单。"'>"Absolutely stunning experience. Our guide drove to Finland and on our way home we saw the dancing lights — he worked so hard to track them down. Just completed my dream bucket list."</div>
+            <div class="review-item-meta">
+              <span class="review-item-author">Sudha · India 🇮🇳 · Nov 2025</span>
+              <span class="review-item-guide">Kamil mentioned</span>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-item-stars">★★★★★</div>
+            <div class="review-item-text" data-en='"Both owners can be trusted unconditionally. They do this not as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."' data-zh='"两位主人都可以无条件信任。他们不是把这当工作，而是充满热情和激情。我可以毫无保留地推荐Snow Travels。"'>"Both owners can be trusted unconditionally. They do this not as a job, but with great enthusiasm and passion. I can recommend Snow Travels without reservation."</div>
+            <div class="review-item-meta">
+              <span class="review-item-author">Erik K. 🇩🇪 · Tripadvisor</span>
+              <span class="review-item-guide">Hassan mentioned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HELP -->
+<div class="help-section">
+  <div class="help-container">
+    <div class="label" data-en="Need help booking?" data-zh="需要帮助预订吗？">Need help booking?</div>
+    <h2 data-en="We're here<br><strong>to help you choose</strong>" data-zh="我们在这里<br><strong>帮助您选择</strong>">We're here<br><strong>to help you choose</strong></h2>
+    <p data-en="Not sure which tour is right for you? Want to book for a large group? Have a special request or need a private tour? Contact us directly — we reply fast in both English and Chinese." data-zh="不确定哪个旅游适合您？想为大型团体预订？有特殊要求或需要私人旅游？直接联系我们——我们用英文和中文快速回复。">Not sure which tour is right for you? Want to book for a large group? Have a special request or need a private tour? Contact us directly — we reply fast in both English and Chinese.</p>
+    <div class="help-methods">
+      <a href="mailto:info@snow-travels.com" class="help-btn help-btn-green" data-en="Email us →" data-zh="发邮件给我们 →">Email us →</a>
+      <a href="https://www.instagram.com/snowtravelstromso/" target="_blank" class="help-btn help-btn-outline" data-en="Instagram DM" data-zh="Instagram私信">Instagram DM</a>
+      <a href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank" class="help-btn help-btn-outline">RedNote 小红书</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">❄ Snow <span>Travels</span></div>
+        <p class="footer-desc" data-en="Tromsø's most passionate aurora guides. Rated #1 on GetYourGuide." data-zh="特罗姆瑟最热情的极光导游。GetYourGuide排名第一。">Tromsø's most passionate aurora guides. Rated #1 on GetYourGuide.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-t">Pages</div>
+        <a href="index.html">Home</a>
+        <a href="tours.html">Tours</a>
+        <a href="booking.html">Booking</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-t">Book via</div>
+        <a href="https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/" target="_blank">GetYourGuide</a>
+        <a href="https://www.viator.com" target="_blank">Viator</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-t">Follow</div>
+        <a href="https://www.instagram.com/snowtravelstromso/" target="_blank">Instagram</a>
+        <a href="https://www.xiaohongshu.com/user/profile/42934309046" target="_blank">小红书 RedNote</a>
+        <a href="mailto:info@snow-travels.com">info@snow-travels.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Snow Travels AS · Tromsø, Norway</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* ── BOOKING CALENDAR ── */
+const STRIPE = {
+  mini: 'https://buy.stripe.com/fZucN6dnF8LU1Wr6QcdQQ01',
+  bus:  'https://buy.stripe.com/7sYbJ2bfxe6e58D3E0dQQ00'
+};
+const PRICES = { mini: 2400, bus: 1200 };
+const MAXCAP = { mini: 15, bus: 50 };
+const THUMB  = {
+  mini: "url('images/aurora-couple-green.jpg')",
+  bus:  "url('images/aurora-couple-purple.jpg')"
+};
+const GYG = {
+  mini: 'https://www.getyourguide.com/tromso-l32375/tromso-northern-lights-tour-with-small-group-minibus-t525013/',
+  bus:  'https://www.viator.com'
+};
+
+let curTour = 'mini',
+    curYear = new Date().getFullYear(),
+    curMonth = new Date().getMonth(),
+    selDate = null,
+    qty = 1;
+
+function seedRand(s) { let x = Math.sin(s + 1) * 10000; return x - Math.floor(x); }
+
+function getAvail(tour, y, m, d) {
+  const s = (y * 10000 + m * 100 + d) * (tour === 'mini' ? 1 : 7);
+  const r = seedRand(s), max = MAXCAP[tour];
+  if (r < 0.12) return 0;
+  return Math.max(0, max - Math.floor(r * max * 1.1));
+}
+
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function buildCalendar() {
+  document.getElementById('calTitle').textContent = MONTHS[curMonth] + ' ' + curYear;
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const fd = new Date(curYear, curMonth, 1).getDay();
+  const offset = (fd === 0) ? 6 : fd - 1;
+  const dim = new Date(curYear, curMonth + 1, 0).getDate();
+
+  for (let i = 0; i < offset; i++) {
+    const el = document.createElement('button');
+    el.className = 'cday empty';
+    grid.appendChild(el);
+  }
+
+  for (let d = 1; d <= dim; d++) {
+    const date = new Date(curYear, curMonth, d);
+    const isPast = date < today;
+    const isToday = date.getTime() === today.getTime();
+    const isSel = selDate && date.getTime() === selDate.getTime();
+    const avail = getAvail(curTour, curYear, curMonth + 1, d);
+    const max = MAXCAP[curTour];
+
+    let cls = 'cday';
+    if (isPast) cls += ' past';
+    else if (avail === 0) cls += ' full';
+    else if (avail <= max * 0.3) cls += ' few';
+    else cls += ' avail';
+    if (isToday && !isPast) cls += ' today';
+    if (isSel) cls += ' selected';
+
+    const el = document.createElement('button');
+    el.className = cls;
+    el.textContent = d;
+    if (!isPast && avail > 0) el.onclick = () => selectDate(new Date(curYear, curMonth, d));
+    grid.appendChild(el);
+  }
+}
+
+function selectDate(date) { selDate = date; qty = 1; buildCalendar(); updatePanel(); }
+function clearDate() { selDate = null; buildCalendar(); updatePanel(); }
+
+function updatePanel() {
+  const empty = document.getElementById('panelEmpty');
+  const book  = document.getElementById('panelBook');
+  if (!selDate) { empty.style.display = 'block'; book.style.display = 'none'; return; }
+  empty.style.display = 'none'; book.style.display = 'block';
+
+  const opts = { weekday: 'long', month: 'long', day: 'numeric' };
+  document.getElementById('selDateDisp').textContent = selDate.toLocaleDateString('en-GB', opts);
+
+  const avail = getAvail(curTour, selDate.getFullYear(), selDate.getMonth() + 1, selDate.getDate());
+  const max = MAXCAP[curTour];
+  const pct = Math.round((max - avail) / max * 100);
+
+  document.getElementById('capText').textContent = avail + ' of ' + max + ' spots left';
+  document.getElementById('capFill').style.width = pct + '%';
+
+  const badge = document.getElementById('capBadge');
+  const fill  = document.getElementById('capFill');
+  if (avail === 0) {
+    fill.style.background = '#ef4444';
+    badge.textContent = 'Fully booked';
+    badge.className = 'cap-badge badge-red';
+  } else if (avail <= max * 0.3) {
+    fill.style.background = '#fbbf24';
+    badge.textContent = 'Last spots';
+    badge.className = 'cap-badge badge-yellow';
+  } else {
+    fill.style.background = '#4ade80';
+    badge.textContent = 'Available';
+    badge.className = 'cap-badge badge-green';
+  }
+
+  if (qty > avail) qty = avail;
+  document.getElementById('qtyDisp').textContent = qty;
+  document.getElementById('qtyMinus').disabled = qty <= 1;
+  document.getElementById('qtyPlus').disabled  = qty >= Math.min(avail, max);
+
+  document.getElementById('totalPrice').textContent = (qty * PRICES[curTour]).toLocaleString('no-NO');
+  document.getElementById('pricePerLine').textContent = qty + ' × ' + PRICES[curTour].toLocaleString('no-NO') + ' kr';
+
+  const btn = document.getElementById('stripeBtn');
+  if (avail === 0) {
+    btn.removeAttribute('href');
+    btn.style.opacity = '0.4';
+    btn.style.pointerEvents = 'none';
+  } else {
+    btn.href = STRIPE[curTour] + '?prefilled_quantity=' + qty;
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+  }
+}
+
+function changeQty(delta) {
+  if (!selDate) return;
+  const avail = getAvail(curTour, selDate.getFullYear(), selDate.getMonth() + 1, selDate.getDate());
+  qty = Math.max(1, Math.min(qty + delta, Math.min(avail, MAXCAP[curTour])));
+  updatePanel();
+}
+
+function setTour(tour, btn) {
+  curTour = tour;
+  document.querySelectorAll('.ttab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selDate = null; qty = 1;
+  document.getElementById('tourThumb').style.backgroundImage = THUMB[tour];
+  document.getElementById('tourName').innerHTML = tour === 'mini' ? 'Northern Lights<br>Minibus Tour' : 'Northern Lights<br>Bus Tour';
+  document.getElementById('tourSub').textContent = tour === 'mini' ? 'Max 15 guests · 2,400 kr/person' : 'Max 50 guests · 1,200 kr/person';
+  document.getElementById('gygLink').href = GYG[tour];
+  buildCalendar(); updatePanel();
+}
+
+function prevMonth() { curMonth--; if (curMonth < 0) { curMonth = 11; curYear--; } buildCalendar(); }
+function nextMonth() { curMonth++; if (curMonth > 11) { curMonth = 0; curYear++; } buildCalendar(); }
+
+/* Init */
+document.getElementById('tourThumb').style.backgroundImage = THUMB['mini'];
+buildCalendar();
+updatePanel();
+</script>
+</body>
+</html>

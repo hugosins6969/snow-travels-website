@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:22px;color:#fff}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:64px;background:rgba(6,12,8,0.96);backdrop-filter:blur(12px);border-radius:10px;border:0.5px solid rgba(255,255,255,0.08)}
+  .logo{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:0.5px}
+  .logo span{color:#4ade80}
+  .links{display:flex;align-items:center;gap:2px}
+  .link{color:rgba(255,255,255,0.7);font-size:13px;font-weight:400;padding:7px 14px;border-radius:6px;letter-spacing:0.2px}
+  .link.active{color:#fff;background:rgba(255,255,255,0.06)}
+  .lang{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:500;margin-left:6px}
+  .book{background:#4ade80;color:#052010;padding:8px 18px;border-radius:7px;font-size:12px;font-weight:600;margin-left:6px}
+</style></head><body>
+<div class="nav">
+  <div class="logo">❄ Snow <span>Travels</span></div>
+  <div class="links">
+    <div class="link">Home</div>
+    <div class="link active">Tours ▾</div>
+    <div class="link">Booking</div>
+    <div class="link">FAQ</div>
+    <span class="lang">中文</span>
+    <span class="book">Book now</span>
+  </div>
+</div>
+</body></html>

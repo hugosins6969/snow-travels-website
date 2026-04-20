@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:22px;color:#fff}
+  .row{display:flex;flex-direction:column;gap:10px}
+  .spec{display:grid;grid-template-columns:1fr 150px;align-items:center;padding:10px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);gap:14px}
+  .spec:last-child{border-bottom:none}
+  .meta{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.8px;text-align:right;font-variant-numeric:tabular-nums}
+
+  .body     {font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.55);max-width:560px}
+  .ui       {font-size:13px;color:rgba(255,255,255,0.7)}
+  .meta-small{font-size:12px;color:rgba(255,255,255,0.4)}
+  .micro    {font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;font-weight:500}
+  .xmicro   {font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+  .accent   {color:#4ade80}
+</style></head><body>
+<div class="row">
+  <div class="spec"><span class="body">The most personal aurora experience in Tromsø.</span><span class="meta">Body · 300 · 15/1.8</span></div>
+  <div class="spec"><span class="ui">Book your tour →</span><span class="meta">UI · 400 · 13</span></div>
+  <div class="spec"><span class="meta-small">Max 15 guests · 2,400 kr / person</span><span class="meta">Meta · 400 · 12</span></div>
+  <div class="spec"><span class="micro accent">Our signature experience</span><span class="meta">Label · 500 · 11 · +2</span></div>
+  <div class="spec"><span class="xmicro">Duration</span><span class="meta">Meta-key · 600 · 10 · +1.5</span></div>
+</div>
+</body></html>

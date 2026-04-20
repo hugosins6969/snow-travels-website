@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:#060c08;font-family:var(--font-body);padding:22px;color:#fff}
+  .row{display:flex;gap:14px;align-items:flex-end}
+  .cell{flex:1;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .box{width:150px;height:96px;border-radius:10px}
+  .dropdown{background:rgba(6,12,8,0.99);border:0.5px solid rgba(255,255,255,0.12);box-shadow:0 24px 64px rgba(0,0,0,0.7)}
+  .chat{background:#0a1a0c;border:0.5px solid rgba(74,222,128,0.15);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
+  .toggle{background:#052010;border:1px solid rgba(74,222,128,0.3);box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+  .nm{font-size:11px;font-weight:600}
+  .meta{font-size:10px;color:rgba(255,255,255,0.4);font-variant-numeric:tabular-nums;max-width:160px;text-align:center;line-height:1.4}
+</style></head><body>
+<div class="row">
+  <div class="cell"><div class="box dropdown"></div><div class="nm">Dropdown</div><div class="meta">0 24 64 · 70%</div></div>
+  <div class="cell"><div class="box chat"></div><div class="nm">Chat widget</div><div class="meta">0 12 40 · 50%</div></div>
+  <div class="cell"><div class="box toggle"></div><div class="nm">Chat toggle</div><div class="meta">0 4 20 · 30%</div></div>
+</div>
+</body></html>

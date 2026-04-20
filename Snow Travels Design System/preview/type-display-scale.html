@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:22px;color:var(--fg)}
+  .row{display:flex;flex-direction:column;gap:10px}
+  .spec{display:grid;grid-template-columns:1fr 140px;align-items:baseline;padding:10px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);gap:14px}
+  .spec:last-child{border-bottom:none}
+  .label{font-family:var(--font-display)}
+  .meta{font-family:var(--font-body);font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.8px;text-align:right;font-variant-numeric:tabular-nums}
+
+  .h2     {font-size:40px;font-weight:300;line-height:1.1;letter-spacing:-0.5px;color:#fff}
+  .h2 strong{font-weight:600}
+  .tour   {font-size:30px;font-weight:400;letter-spacing:-0.3px;color:#fff}
+  .serif-b{font-size:22px;font-weight:600;color:#fff}
+  .quote  {font-size:17px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.85)}
+  .number {font-size:32px;font-weight:600;color:#fff;line-height:1}
+</style></head><body>
+<div class="row">
+  <div class="spec"><span class="label h2">Choose your <strong>experience</strong></span><span class="meta">H2 · 300/600 · 40/–0.5</span></div>
+  <div class="spec"><span class="label tour">Northern Lights Minibus Tour</span><span class="meta">Tour · 400 · 30/–0.3</span></div>
+  <div class="spec"><span class="label serif-b">Husky dog sledding</span><span class="meta">Card · 600 · 22</span></div>
+  <div class="spec"><span class="label quote">"he worked so hard to track them down."</span><span class="meta">Quote · 300 italic · 17</span></div>
+  <div class="spec"><span class="label number">97.54<span style="font-size:18px">%</span></span><span class="meta">Number · 600 · 32</span></div>
+</div>
+</body></html>

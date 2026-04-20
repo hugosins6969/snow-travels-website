@@ -1,0 +1,228 @@
+/* =====================================================
+   SNOW TRAVELS — FOUNDATIONS
+   Colors + typography tokens, extracted from shared.css
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* ── BRAND ── */
+  --aurora:           #4ade80;  /* primary accent (aurora green) */
+  --aurora-hover:     #22c55e;  /* primary button hover */
+  --aurora-soft:      #86efac;  /* secondary accent / italic highlight */
+  --aurora-ink:       #052010;  /* foreground on aurora-green buttons */
+  --aurora-tint-12:   rgba(74,222,128,0.12);
+  --aurora-tint-20:   rgba(74,222,128,0.20);
+  --aurora-tint-35:   rgba(74,222,128,0.35);
+
+  /* ── SURFACES (nearly-black green) ── */
+  --bg:               #060c08;  /* page background */
+  --bg-raised:        #080f09;  /* cards, strips, why-section */
+  --bg-deep:          #040a05;  /* footer */
+  --bg-chat:          #0a1a0c;  /* chat widget background */
+
+  /* ── FOREGROUND LADDER (white w/ alpha) ── */
+  --fg:               #ffffff;
+  --fg-1:             rgba(255,255,255,0.85); /* faq q, tour meta val */
+  --fg-2:             rgba(255,255,255,0.70); /* nav links, body tint */
+  --fg-3:             rgba(255,255,255,0.55); /* descriptions */
+  --fg-4:             rgba(255,255,255,0.40); /* captions, muted labels */
+  --fg-5:             rgba(255,255,255,0.25); /* disabled, section heads */
+  --fg-6:             rgba(255,255,255,0.18); /* footer bottom */
+
+  /* ── HAIRLINES (white w/ alpha — always 0.5px) ── */
+  --line-06:          rgba(255,255,255,0.06);
+  --line-08:          rgba(255,255,255,0.08);
+  --line-10:          rgba(255,255,255,0.10);
+  --line-12:          rgba(255,255,255,0.12);
+  --line-15:          rgba(255,255,255,0.15);
+
+  /* ── SEMANTIC / STATUS ── */
+  --status-few:       #fbbf24;  /* yellow — last spots */
+  --status-few-tint:  rgba(251,191,36,0.15);
+  --status-full:      #ef4444;  /* red — fully booked */
+  --status-full-tint: rgba(239,68,68,0.15);
+  --status-avail:     var(--aurora);
+  --status-avail-tint:var(--aurora-tint-20);
+
+  /* ── EXTERNAL BRAND (co-marketing) ── */
+  --rednote-red:      #c8102e;  /* RedNote / 小红书 strip */
+  --star-gold:        #f5c842;  /* ★★★★★ review stars */
+  --ta-green:         #00AF87;  /* Tripadvisor owl green */
+  --gyg-orange:       #ff5533;  /* GetYourGuide wordmark */
+
+  /* ── TYPE FAMILIES ── */
+  --font-display:     'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── TYPE SCALE (from shared.css, as used) ── */
+  --t-hero:           clamp(48px, 7vw, 88px);    /* home H1 */
+  --t-page-h1:        clamp(36px, 5vw, 64px);    /* interior page hero */
+  --t-h2:             clamp(36px, 4.5vw, 56px);  /* section H2 */
+  --t-h2-sm:          clamp(32px, 4vw, 48px);    /* booking section H2 */
+  --t-tour-name:      clamp(32px, 4.5vw, 52px);  /* tour titles */
+  --t-h3:             32px;                      /* cta box h3 */
+  --t-serif-display:  22px;                      /* day-card-name, bk-tour-name */
+  --t-serif-quote:    18px;                      /* review-text italic */
+  --t-body:           15px;                      /* tour-desc, body-text */
+  --t-body-sm:        14px;                      /* button label */
+  --t-ui:             13px;                      /* nav link, ui copy */
+  --t-meta:           12px;                      /* metadata */
+  --t-micro:          11px;                      /* label, trust-badge */
+  --t-xmicro:         10px;                      /* meta-key, badge */
+
+  /* ── WEIGHTS ── */
+  --w-serif-light:    300;
+  --w-serif-reg:      400;
+  --w-serif-bold:     600;  /* serif "emphasis" weight */
+  --w-body-light:     300;
+  --w-body-reg:       400;
+  --w-body-med:       500;
+  --w-body-semi:      600;
+
+  /* ── LETTER-SPACING (label conventions) ── */
+  --track-label:      2.5px;   /* .label  TEXT-TRANSFORM:UPPERCASE */
+  --track-eyebrow:    2px;     /* hero eyebrow */
+  --track-meta:       1.5px;   /* meta-key, small uppercase */
+  --track-micro:      1px;     /* footer-col-t, stats label */
+  --track-tight:     -0.5px;   /* serif display negative tracking */
+  --track-tighter:   -1px;     /* hero-h1 */
+
+  /* ── LINE-HEIGHT ── */
+  --lh-tight:         1.0;     /* hero-h1 */
+  --lh-display:       1.1;     /* serif headings */
+  --lh-body:          1.6;     /* body default */
+  --lh-prose:         1.8;     /* long-form copy */
+
+  /* ── RADII ── */
+  --r-1:              6px;     /* nav-link, small buttons */
+  --r-2:              7px;     /* btn-book-nav, btn-tour */
+  --r-3:              8px;     /* btn-primary, dd-icon */
+  --r-4:              10px;    /* day-card, tour-price-row */
+  --r-5:              12px;    /* dropdown-menu, bk-panel */
+  --r-pill:           30px;    /* tab buttons */
+  --r-round:          50%;     /* dots, markers */
+
+  /* ── SPACING (as used) ── */
+  --s-1:              4px;
+  --s-2:              8px;
+  --s-3:              12px;
+  --s-4:              16px;
+  --s-5:              24px;
+  --s-6:              32px;
+  --s-7:              40px;
+  --s-8:              48px;
+  --s-10:             64px;
+  --s-12:             80px;
+  --s-14:             96px;
+
+  /* ── ELEVATION ── */
+  --shadow-dd:        0 24px 64px rgba(0,0,0,0.7);  /* dropdown menu */
+  --shadow-chat:      0 12px 40px rgba(0,0,0,0.5);  /* chat widget */
+  --shadow-toggle:    0 4px 20px rgba(0,0,0,0.3);   /* chat toggle */
+
+  /* ── MOTION ── */
+  --ease-out:         ease;
+  --dur-fast:         0.15s;   /* dropdown items */
+  --dur-ui:           0.2s;    /* links, buttons */
+  --dur-slow:         0.4s;    /* nav bg transition */
+  --dur-photo:        0.7s;    /* tour-block img zoom */
+  --dur-fade:         1.0s;    /* hero-bg swap */
+}
+
+/* =====================================================
+   SEMANTIC TYPE CLASSES
+   ===================================================== */
+
+.st-eyebrow,
+.st-label {
+  font-family: var(--font-body);
+  font-size: var(--t-micro);
+  font-weight: var(--w-body-med);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--aurora);
+}
+.st-eyebrow {
+  color: var(--fg-3);
+  letter-spacing: var(--track-eyebrow);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.st-eyebrow::before {
+  content:''; display:block; width:28px; height:1px; background: var(--aurora);
+}
+
+.st-hero-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-hero);
+  font-weight: var(--w-serif-light);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tighter);
+  color: var(--fg);
+}
+.st-hero-h1 strong { font-weight: var(--w-serif-bold); display: block; }
+.st-hero-h1 em { font-style: italic; color: var(--aurora-soft); font-weight: inherit; }
+
+.st-page-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-page-h1);
+  font-weight: var(--w-serif-light);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+.st-page-h1 strong { font-weight: var(--w-serif-bold); }
+
+.st-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2);
+  font-weight: var(--w-serif-light);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+.st-h2 strong { font-weight: var(--w-serif-bold); }
+
+.st-serif-display {
+  font-family: var(--font-display);
+  font-size: var(--t-serif-display);
+  font-weight: var(--w-serif-bold);
+  color: var(--fg);
+}
+
+.st-serif-quote {
+  font-family: var(--font-display);
+  font-size: var(--t-serif-quote);
+  font-weight: var(--w-serif-light);
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--fg-1);
+}
+
+.st-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  font-weight: var(--w-body-light);
+  line-height: var(--lh-prose);
+  color: var(--fg-3);
+}
+
+.st-meta {
+  font-family: var(--font-body);
+  font-size: var(--t-meta);
+  color: var(--fg-4);
+}
+
+.st-ui {
+  font-family: var(--font-body);
+  font-size: var(--t-ui);
+  font-weight: var(--w-body-reg);
+  color: var(--fg-2);
+}
+
+.st-number {
+  font-family: var(--font-display);
+  font-weight: var(--w-serif-bold);
+  color: var(--fg);
+  line-height: 1;
+}

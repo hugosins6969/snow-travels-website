@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-body);padding:24px;color:var(--fg)}
+  .row{display:flex;flex-direction:column;gap:12px}
+  .lvl{display:flex;align-items:center;gap:16px;height:36px}
+  .chip{width:56px;height:36px;border-radius:6px;background:#fff;flex-shrink:0;position:relative}
+  .chip::after{content:'';position:absolute;inset:0;border-radius:6px;background:var(--bg);opacity:var(--a)}
+  .lbl{font-size:13px;font-weight:500}
+  .meta{font-size:11px;color:rgba(255,255,255,0.4);font-variant-numeric:tabular-nums;letter-spacing:0.3px;margin-left:auto}
+</style></head><body>
+<div class="row">
+  <div class="lvl" style="--a:0.15"><div class="chip"></div><span class="lbl" style="color:rgba(255,255,255,0.85)">FG 1 — fg-1</span><span class="meta">rgba(255,255,255, 0.85)</span></div>
+  <div class="lvl" style="--a:0.30"><div class="chip"></div><span class="lbl" style="color:rgba(255,255,255,0.70)">FG 2 — fg-2 · nav, body tint</span><span class="meta">0.70</span></div>
+  <div class="lvl" style="--a:0.45"><div class="chip"></div><span class="lbl" style="color:rgba(255,255,255,0.55)">FG 3 — fg-3 · descriptions</span><span class="meta">0.55</span></div>
+  <div class="lvl" style="--a:0.60"><div class="chip"></div><span class="lbl" style="color:rgba(255,255,255,0.40)">FG 4 — fg-4 · captions, muted</span><span class="meta">0.40</span></div>
+  <div class="lvl" style="--a:0.75"><div class="chip"></div><span class="lbl" style="color:rgba(255,255,255,0.25)">FG 5 — fg-5 · disabled</span><span class="meta">0.25</span></div>
+</div>
+</body></html>
